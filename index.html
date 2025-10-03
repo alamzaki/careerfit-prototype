@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CareerFit Prototype</title>
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #f8f9fc; margin: 0; padding: 0; }
+    header { background: linear-gradient(135deg, #3f51b5, #2196f3); color: white; text-align: center; padding: 60px 20px; }
+    header h1 { margin: 0; font-size: 2.5em; }
+    header p { margin: 10px 0 20px; font-size: 1.2em; }
+    .container { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .btn { display: inline-block; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; }
+    .btn-primary { background: #2196f3; color: white; font-size: 1em; }
+    .btn-primary:hover { background: #1976d2; }
+    .question { margin-bottom: 25px; }
+    .question h3 { margin-bottom: 10px; }
+    .options label { display: block; margin: 6px 0; cursor: pointer; }
+    .hidden { display: none; }
+    .results ul { list-style: none; padding: 0; }
+    .results li { background: #f0f4ff; margin: 10px 0; padding: 12px; border-radius: 6px; }
+    .feedback { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- Landing Page -->
+  <header id="landing">
+    <h1>Find Your Career Fit in Under 2 Minutes</h1>
+    <p>Answer 6 short questions and discover 3 career paths tailored to you.</p>
+    <button class="btn btn-primary" onclick="startQuiz()">Start Quiz →</button>
+  </header>
+
+  <!-- Quiz Page -->
+  <div class="container hidden" id="quiz">
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. When you think about your future career, what matters MOST right now?</h3>
+        <div class="options">
+          <label><input type="radio" name="q1"> Stable, well-paying job quickly</label>
+          <label><input type="radio" name="q1"> Exploring different paths before committing</label>
+          <label><input type="radio" name="q1"> Doing meaningful/impactful work</label>
+          <label><input type="radio" name="q1"> Long-term growth and leadership</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>2. Which type of work feels most natural to you?</h3>
+        <div class="options">
+          <label><input type="radio" name="q2"> Analyzing and solving complex problems</label>
+          <label><input type="radio" name="q2"> Leading projects and coordinating people</label>
+          <label><input type="radio" name="q2"> Designing and creating experiences/products</label>
+          <label><input type="radio" name="q2"> Researching and learning deeply</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>3. What frustrates you the most about your current career planning?</h3>
+        <div class="options">
+          <label><input type="radio" name="q3"> Too many options, can’t decide</label>
+          <label><input type="radio" name="q3"> Generic advice, not personal</label>
+          <label><input type="radio" name="q3"> Unsure if my skills have real demand</label>
+          <label><input type="radio" name="q3"> Can’t connect my interests to real jobs</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>4. Which type of job environment do you see yourself thriving in?</h3>
+        <div class="options">
+          <label><input type="radio" name="q4"> Fast-paced startup, many hats</label>
+          <label><input type="radio" name="q4"> Structured corporate career path</label>
+          <label><input type="radio" name="q4"> Research/academia</label>
+          <label><input type="radio" name="q4"> Freelance/flexible lifestyle</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>5. Which strength do friends or mentors most often notice in you?</h3>
+        <div class="options">
+          <label><input type="radio" name="q5"> Technical ability (coding, analysis)</label>
+          <label><input type="radio" name="q5"> Communication & leadership</label>
+          <label><input type="radio" name="q5"> Creativity & design thinking</label>
+          <label><input type="radio" name="q5"> Persistence & problem-solving</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>6. What’s your biggest worry about the future of work?</h3>
+        <div class="options">
+          <label><input type="radio" name="q6"> Skills becoming irrelevant due to AI</label>
+          <label><input type="radio" name="q6"> Not finding a career matching my values</label>
+          <label><input type="radio" name="q6"> Wasting time/money on degrees with poor ROI</label>
+          <label><input type="radio" name="q6"> Getting stuck in a career that doesn’t excite me</label>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" onclick="showResults()">See My Results →</button>
+    </form>
+  </div>
+
+  <!-- Results Page -->
+  <div class="container hidden" id="results">
+    <h2>Your Suggested Career Paths</h2>
+    <ul>
+      <li>Data Scientist — high demand, $110K avg salary</li>
+      <li>Product Manager — growing cross-functional career</li>
+      <li>UX Designer — creative + people-centered role</li>
+    </ul>
+
+    <p><strong>Want the full report with salary trends, demand insights, and a personal roadmap?</strong></p>
+    <input type="email" placeholder="Enter your email" style="padding:10px;width:70%;border-radius:6px;border:1px solid #ccc;">
+    <button class="btn btn-primary" onclick="thankYou()">Get My Report</button>
+
+    <div class="feedback">
+      <p>How accurate were these suggestions?</p>
+      <button class="btn" onclick="alert('Thanks for your feedback!')">👍</button>
+      <button class="btn" onclick="alert('Thanks for your feedback!')">👎</button>
+    </div>
+  </div>
+
+  <!-- Thank You Page -->
+  <div class="container hidden" id="thankyou">
+    <h2>Thank you!</h2>
+    <p>Your full report is being prepared. Check your inbox soon 🎉</p>
+  </div>
+
+  <script>
+    function startQuiz() {
+      document.getElementById('landing').classList.add('hidden');
+      document.getElementById('quiz').classList.remove('hidden');
+    }
+    function showResults() {
+      document.getElementById('quiz').classList.add('hidden');
+      document.getElementById('results').classList.remove('hidden');
+    }
+    function thankYou() {
+      document.getElementById('results').classList.add('hidden');
+      document.getElementById('thankyou').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
