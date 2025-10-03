@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CareerFit Prototype</title>
+  <title>CareerFit Prototype — Zaki Alam</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CareerFit — a lean prototype to test student demand for quick, market-aware career matching. Built by Zaki Alam." />
   <!-- Professional font (optional) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -16,39 +17,56 @@
       --line:#e6eaf0;
       --accent:#2563eb;     /* blue */
       --accent-2:#0ea5e9;   /* sky */
-      --good:#16a34a;
-      --warn:#f59e0b;
       --radius:14px;
       --shadow:0 10px 24px rgba(2,6,23,.08);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6}
     img{max-width:100%;display:block}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
     .wrap{max-width:980px;margin:0 auto;padding:24px 16px}
+
+    /* TOP NAV */
+    .topnav{
+      backdrop-filter: blur(8px);
+      position:sticky; top:0; z-index:10;
+      background:rgba(255,255,255,.85);
+      border-bottom:1px solid var(--line);
+    }
+    .topnav-inner{
+      max-width:1100px; margin:0 auto; padding:10px 16px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .brand{font-weight:800}
+    .navlinks{display:flex; gap:14px; align-items:center}
+    .navbtn{
+      display:inline-block; padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line); background:#fff; color:#0f172a; font-weight:600;
+    }
+    .navbtn.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
+    .navbtn:hover{opacity:.95}
 
     /* HERO */
     header{
-      position:relative;
-      color:#fff;
-      border-bottom:1px solid var(--line);
-      overflow:hidden;
+      position:relative; color:#fff;
+      border-bottom:1px solid var(--line); overflow:hidden;
     }
     .hero-bg{
       background-image:url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2000&auto=format&fit=crop');
-      background-size:cover;background-position:center;
-      filter:brightness(.7);
-      position:absolute;inset:0;
+      background-size:cover; background-position:center;
+      filter:brightness(.7); position:absolute; inset:0;
     }
     .hero-inner{
-      position:relative;z-index:1;
-      max-width:1100px;margin:0 auto;padding:64px 16px;
-      display:grid;grid-template-columns:1.3fr .9fr;gap:18px;align-items:center;
+      position:relative; z-index:1; max-width:1100px;
+      margin:0 auto; padding:64px 16px;
+      display:grid; grid-template-columns:1.3fr .9fr; gap:18px; align-items:center;
     }
     @media (max-width:900px){ .hero-inner{grid-template-columns:1fr;padding:48px 16px} }
     .hero-card{
       background:rgba(15,23,42,.55);
       border:1px solid rgba(255,255,255,.15);
-      border-radius:16px;padding:18px 18px 20px 18px;backdrop-filter:blur(6px);
+      border-radius:16px; padding:18px 18px 20px; backdrop-filter:blur(6px);
     }
     .hero-card h1{margin:0 0 6px 0;font-size:30px}
     .hero-card p{margin:6px 0 14px 0;color:#e5ecff}
@@ -57,8 +75,10 @@
 
     .hero-side{
       background:rgba(255,255,255,.9);
-      border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);
+      border:1px solid var(--line); border-radius:16px; padding:14px; box-shadow:var(--shadow);
     }
+    .hero-subnav{margin-top:10px; font-size:14px}
+    .hero-subnav a{color:#fff; text-decoration:underline}
 
     /* CARDS / LAYOUT */
     .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin:20px 0}
@@ -100,11 +120,25 @@
       padding:10px 12px;border-radius:10px;border:1px solid var(--line);width:70%;max-width:420px
     }
 
-    /* FOOTER THANKS */
-    .thanks{ text-align:center }
+    /* FOOTER */
+    footer{padding:18px 0 30px; text-align:center; font-size:14px; color:var(--muted)}
   </style>
 </head>
 <body>
+
+  <!-- TOP NAV -->
+  <div class="topnav">
+    <div class="topnav-inner">
+      <div class="brand">CareerFit</div>
+      <div class="navlinks">
+        <a class="navbtn" href="index.html">Home</a>
+        <a class="navbtn" href="packet.html">Concept Map</a>
+        <!-- If you keep a separate prototype.html, link it here too -->
+        <!-- <a class="navbtn" href="prototype.html">Prototype</a> -->
+        <a class="navbtn primary" href="#quiz" onclick="startQuiz()">Start Quiz</a>
+      </div>
+    </div>
+  </div>
 
   <!-- HERO -->
   <header id="landing">
@@ -114,6 +148,9 @@
         <h1>Find Your Career Fit in Under 2 Minutes</h1>
         <p>Answer 6 quick questions. Get 3 career paths matched to your strengths and today’s market.</p>
         <button class="cta" onclick="startQuiz()">Start Quiz →</button>
+        <div class="hero-subnav">
+          Prefer reading first? <a href="packet.html">View the Concept Map</a>
+        </div>
       </div>
       <div class="hero-side">
         <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop" alt="Students working">
@@ -245,9 +282,14 @@
       <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=900&auto=format&fit=crop" alt="Thanks" style="border-radius:12px;border:1px solid var(--line);margin:0 auto 12px;max-height:220px;object-fit:cover">
       <h2 class="title">Thanks! Your report is being prepared 🎉</h2>
       <p class="muted">This is a prototype for the With/Care Ventures assignment. In a real version, we’d email you the full dashboard and roadmap.</p>
+      <p><a href="packet.html">See the Concept Map →</a></p>
     </div>
 
   </div>
+
+  <footer>
+    © 2025 — Zaki Alam • <a href="packet.html">Concept Map</a> • <a href="index.html">Home</a>
+  </footer>
 
   <script>
     const total = 6;
@@ -288,11 +330,9 @@
         showOnly(current);
         updateProgress();
         if (current === total){
-          // last question view still shows Next; change button label
           document.querySelector('.actions .btn-primary').textContent = 'See My Results →';
         }
       } else {
-        // all answered
         showResults();
       }
     }
@@ -302,19 +342,18 @@
         current--;
         showOnly(current);
         updateProgress();
-        document.querySelector('.actions .btn-primary').textContent = (current===total) ? 'See My Results →' : 'Next →';
+        document.querySelector('.actions .btn-primary').textContent =
+          (current===total) ? 'See My Results →' : 'Next →';
       }
     }
 
     function showResults(){
-      // Ensure last question is answered
       if (!answered(total)){
         document.getElementById('err').textContent = 'Please pick an option to continue.';
         return;
       }
       document.getElementById('quiz').classList.add('hidden');
       document.getElementById('results').classList.remove('hidden');
-      // Fill bar to 100% to signal completion
       document.getElementById('bar').style.width = '100%';
       document.getElementById('qnote').textContent = 'Quiz completed';
     }
@@ -329,7 +368,7 @@
       }
       document.getElementById('results').classList.add('hidden');
       document.getElementById('thankyou').classList.remove('hidden');
-      // In a real MVP, we’d send the email and log the conversion here.
+      // In a real MVP, you would send the email and log the conversion here.
     }
   </script>
 </body>
