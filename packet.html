@@ -12,14 +12,14 @@
 
 <style>
   :root{
-    --bg:#f7f9fb;            /* page background */
-    --card:#ffffff;          /* card background */
-    --ink:#0f172a;           /* main text */
-    --muted:#475569;         /* secondary text */
-    --line:#e6eaf0;          /* borders */
-    --accent:#4f46e5;        /* indigo */
-    --accent-soft:#eef2ff;   /* indigo 50 */
-    --accent-2:#0ea5e9;      /* sky */
+    --bg:#f7f9fb;
+    --card:#ffffff;
+    --ink:#0f172a;
+    --muted:#475569;
+    --line:#e6eaf0;
+    --accent:#4f46e5;
+    --accent-soft:#eef2ff;
+    --accent-2:#0ea5e9;
     --shadow:0 10px 30px rgba(2,6,23,.08);
     --radius:16px;
   }
@@ -29,50 +29,34 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin:18px 0}
   .hero{display:grid;grid-template-columns:2fr 1.2fr;gap:18px;align-items:center}
   @media (max-width:900px){ .hero{grid-template-columns:1fr} }
-  h1{font-size:28px;letter-spacing:.2px;margin:10px 0}
+  h1{font-size:28px;margin:10px 0}
   h2{font-size:22px;margin:0 0 12px 0}
   h3{font-size:16px;margin:16px 0 8px 0}
   p{margin:8px 0}
-  ul{margin:8px 0 0 18px}
-  ol{margin:8px 0 0 18px}
+  ul,ol{margin:8px 0 0 18px}
   li{margin:6px 0}
   .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-weight:700}
   .small{font-size:13px;color:var(--muted)}
   .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
   .chip{display:inline-block;background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;color:#0b1324}
-  .hero-img{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
-  .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-img img{width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
   .subtle{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px}
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid-2{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
   @media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
-  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-  @media (max-width:900px){ .grid-3{grid-template-columns:1fr} }
-  .table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid var(--line);margin-top:8px}
-  .table th,.table td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;border:1px solid var(--line);margin-top:8px}
+  .table th,.table td{padding:10px 12px;border-bottom:1px solid var(--line)}
   .table th{background:#f3f6fb;text-align:left;font-weight:800}
   .table tr:last-child td{border-bottom:none}
-  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
   @media (max-width:900px){ .kpi-row{grid-template-columns:1fr} }
   .kpi{background:var(--accent-soft);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:12px}
-  .icon{width:22px;height:22px;vertical-align:-4px;margin-right:6px}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
   .footer-note{font-size:12px;color:#7182a6;text-align:center;margin:26px 0}
-  .imgcard{border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .imgcard img{display:block;width:100%;height:220px;object-fit:cover}
-  .caption{padding:10px;font-size:13px;color:var(--muted)}
-  /* print */
-  @media print{
-    body{background:#fff}
-    .card{box-shadow:none}
-    a{color:#000;text-decoration:underline}
-  }
 </style>
 </head>
 <body>
   <div class="wrap">
 
-    <!-- HEADER / HERO -->
+    <!-- HERO -->
     <div class="card">
       <div class="hero">
         <div>
@@ -81,15 +65,12 @@
           <p class="small"><strong>Candidate:</strong> Zaki Alam • IIT Madras • Email: <a href="mailto:alamzaki0804@gmail.com">alamzaki0804@gmail.com</a> • Phone: +91 8178710681</p>
           <div class="chips">
             <span class="chip">Hook: Career Fit Quiz</span>
-            <span class="chip">Metric: Quiz → Email conversion</span>
-            <span class="chip">Goal ≥ 25% (n ≥ 50)</span>
+            <span class="chip">Primary Metric: Quiz → Email conversion</span>
+            <span class="chip">Success ≥ 25% (n ≥ 50)</span>
           </div>
-          <p style="margin-top:12px">
-            <a href="https://alamzaki.github.io/careerfit-prototype/" target="_blank"><strong>👉 Try the Live Quiz Prototype</strong></a>
-          </p>
         </div>
         <div class="hero-img">
-          <img alt="CareerFit banner" src="assets/banner.webp" />
+          <img src="assets/banner.webp" alt="CareerFit Prototype Banner" />
         </div>
       </div>
     </div>
@@ -97,28 +78,18 @@
     <!-- EXECUTIVE SUMMARY -->
     <div class="card">
       <h2>Executive Summary</h2>
-      <div class="grid-2">
-        <div>
-          <p><strong>The problem (students):</strong> many students feel stuck picking a path. There’s too much generic advice and it’s hard to see real ROI.</p>
-          <p><strong>The problem (universities):</strong> career teams must show outcomes, not just “skills taught,” and need clearer signals about where students fit.</p>
-          <p><strong>My idea:</strong> a lightweight tool that gives students <em>3–5 market-aware career matches</em> in minutes, then nudges them into simple, concrete next steps.</p>
-          <p><strong>How I’m testing it:</strong> lead with one hook — a short quiz. If students complete it and request their full report, that’s our demand signal.</p>
-          <div class="kpi-row" style="margin-top:10px">
-            <div class="kpi"><strong>Demand</strong><br/>Quiz → Email conversion (target ≥ 25%).</div>
-            <div class="kpi"><strong>“Accuracy feel”</strong><br/>Thumbs-up rate on suggestions (target ≥ 60%).</div>
-            <div class="kpi"><strong>School interest</strong><br/>Qualified “For Schools” leads (≥ 2 / 100 students).</div>
-          </div>
-        </div>
-        <div class="grid-2">
-          <div class="imgcard">
-            <img src="assets/stressed-student.jpg.webp" alt="Student overwhelmed with choices">
-            <div class="caption">Student side — overwhelmed by options & generic advice.</div>
-          </div>
-          <div class="imgcard">
-            <img src="assets/career-fairs%20counselling.avif" alt="University career counseling">
-            <div class="caption">University side — pressure to prove real career outcomes.</div>
-          </div>
-        </div>
+      <p><strong>The problem (student side):</strong> many students feel stuck when choosing a career path. There’s too much generic advice and it’s hard to know what will actually pay off.</p>
+      <img src="assets/stressed-student.jpg.webp" alt="Stressed student thinking about career" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;margin:10px 0">
+
+      <p><strong>The problem (university side):</strong> career teams must show real outcomes, not just “skills taught,” and they need better signals about where students fit.</p>
+      <img src="assets/career-fairs counselling.avif" alt="University career counselling session" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;margin:10px 0">
+
+      <p><strong>The idea:</strong> a light, fast tool that gives students 3–5 realistic career matches in minutes, then nudges them into simple next steps. For universities, it demonstrates outcomes and builds trust.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><strong>Demand</strong><br/>Quiz → Email conversion (goal ≥ 25%).</div>
+        <div class="kpi"><strong>Accuracy Feel</strong><br/>Thumbs-up rate on suggestions (goal ≥ 60%).</div>
+        <div class="kpi"><strong>School Interest</strong><br/>Qualified leads (≥ 2 per 100 students).</div>
       </div>
     </div>
 
@@ -127,115 +98,80 @@
       <h2>Concept Map</h2>
 
       <h3>Target Users</h3>
-      <p><strong>Primary:</strong> students (18–26) who are ambitious but overwhelmed — they’ve tried courses and advice, but still can’t pick a path.</p>
-      <p><strong>Secondary:</strong> university career services that need to show real career outcomes and improve placement satisfaction.</p>
+      <p><strong>Primary:</strong> students (18–26) who are ambitious but overwhelmed. They’ve taken courses and advice, but still don’t know which career path really fits them.</p>
+      <p><strong>Secondary:</strong> university career services teams who must show outcomes, not just skills training.</p>
 
       <h3>Value Proposition</h3>
-      <div class="grid-2">
-        <div>
-          <ul>
-            <li><strong>For students:</strong> quick clarity (3–5 best-fit options) matched to strengths and real demand — plus a simple next step.</li>
-            <li><strong>For universities:</strong> shift from “we teach skills” to “we guide careers,” with better reporting on outcomes.</li>
-          </ul>
-        </div>
-        <div class="grid-2">
-          <div class="imgcard">
-            <img src="assets/studentshappy.jpg" alt="Students feeling clear and confident">
-            <div class="caption">Students — clarity and action in minutes.</div>
-          </div>
-          <div class="imgcard">
-            <img src="assets/univeristy%20placement%20meeting.png" alt="University placement reporting meeting">
-            <div class="caption">Universities — outcomes you can show and measure.</div>
-          </div>
-        </div>
-      </div>
+      <p><strong>For students:</strong> quick clarity — 3–5 best-fit options aligned to their strengths and market demand, plus a clear next step.</p>
+      <img src="assets/studentshappy.jpg" alt="Happy students finding clarity in career choices" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;margin:10px 0">
+
+      <p><strong>For universities:</strong> a shift from “we teach skills” to “we guide careers,” strengthening outcomes reporting and trust with students and parents.</p>
+      <img src="assets/univeristy placement meeting.png" alt="University team discussing career placements" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;margin:10px 0">
 
       <h3>Five Big Features</h3>
       <ol>
-        <li><strong>Career Fit Quiz (Hook):</strong> 6 questions → instant 3–5 options.</li>
-        <li><strong>Market Demand Dashboard:</strong> salary bands, demand level, growth outlook.</li>
-        <li><strong>Recruiting Tracker:</strong> one place for applications, interviews, referrals.</li>
-        <li><strong>Peer Benchmarking:</strong> anonymous “people like you also explored…” insights.</li>
-        <li><strong>Action Roadmap:</strong> micro-skills and starter projects for each path.</li>
+        <li><strong>Career Fit Quiz (Hook):</strong> 6 quick questions → 3–5 paths instantly.</li>
+        <li><strong>Market Demand Dashboard:</strong> salary ranges, demand level, growth outlook.</li>
+        <li><strong>Recruiting Tracker:</strong> organize applications, interviews, and referrals.</li>
+        <li><strong>Peer Benchmarking:</strong> “people like you also explored…” insights.</li>
+        <li><strong>Action Roadmap:</strong> micro-skills, projects, and simple next steps.</li>
       </ol>
+    </div>
 
-      <div class="subtle">
-        <h3 style="margin-top:0">Riskiest Assumptions & Tests</h3>
-        <table class="table">
-          <tr>
-            <th>Dimension</th><th>Assumption</th><th>Test Surface</th><th>Primary Metric</th><th>Threshold</th>
-          </tr>
-          <tr>
-            <td><strong>Demand</strong></td>
-            <td>Students complete the quiz and want the full report.</td>
-            <td>Landing → 6-Q quiz → suggestions → email gate</td>
-            <td>Quiz → Email conversion</td>
-            <td>≥ 25% (n ≥ 50)</td>
-          </tr>
-          <tr>
-            <td><strong>Feasibility</strong></td>
-            <td>Suggestions feel accurate enough to trust.</td>
-            <td>Thumbs-up / Thumbs-down on results</td>
-            <td>Thumbs-up rate</td>
-            <td>≥ 60%</td>
-          </tr>
-          <tr>
-            <td><strong>Viability</strong></td>
-            <td>Universities show interest if students engage.</td>
-            <td>Simple “For Schools” interest form</td>
-            <td>Qualified leads</td>
-            <td>≥ 2 / 100 students</td>
-          </tr>
-        </table>
-      </div>
+    <!-- RISKS & TESTS -->
+    <div class="card">
+      <h2>Riskiest Assumptions & Tests</h2>
+      <table class="table">
+        <tr>
+          <th>Dimension</th><th>Assumption</th><th>Test Surface</th><th>Primary Metric</th><th>Threshold</th>
+        </tr>
+        <tr>
+          <td><strong>Demand</strong></td>
+          <td>Students complete the quiz and want the full report.</td>
+          <td>Landing → Quiz → Email gate</td>
+          <td>Quiz → Email conversion</td>
+          <td>≥ 25%</td>
+        </tr>
+        <tr>
+          <td><strong>Feasibility</strong></td>
+          <td>Suggestions feel accurate enough to trust.</td>
+          <td>Thumbs-up / Thumbs-down on results</td>
+          <td>Thumbs-up rate</td>
+          <td>≥ 60%</td>
+        </tr>
+        <tr>
+          <td><strong>Viability</strong></td>
+          <td>Universities show interest if students engage.</td>
+          <td>“For Schools” form</td>
+          <td>Qualified leads</td>
+          <td>≥ 2 / 100 students</td>
+        </tr>
+      </table>
     </div>
 
     <!-- EXPERIMENT BUILD -->
     <div class="card">
       <h2>Experiment Build</h2>
-      <p>I built the smallest possible surface to read demand quickly. If students find value, they’ll ask for more; if not, we learn and adjust fast.</p>
+      <p>I built the simplest version possible to test demand quickly. If students find the quiz useful, they’ll share their email to unlock more. If not, we’ll know the hook needs adjusting.</p>
 
       <h3>What’s in the Prototype</h3>
       <ul>
-        <li><strong>Landing Page:</strong> one clear promise (“Find your career fit in under 2 minutes”) and a single CTA.</li>
-        <li><strong>Career Fit Quiz:</strong> 6 short questions about what matters, strengths, and work style.</li>
-        <li><strong>Instant Suggestions:</strong> 3 paths shown immediately; email unlock for the full report (salary, demand, next steps).</li>
-        <li><strong>Quick Feedback:</strong> thumbs-up/down on result “feel.”</li>
+        <li><strong>Landing Page:</strong> one clear promise — “Find your career fit in under 2 minutes.”</li>
+        <li><strong>Career Fit Quiz:</strong> 6 short questions on values, strengths, and work style.</li>
+        <li><strong>Instant Suggestions:</strong> 3 career paths → email unlock for full details (salary, demand, steps).</li>
+        <li><strong>Feedback:</strong> quick thumbs-up/down to check perceived accuracy.</li>
       </ul>
 
-      <div class="grid-3">
-        <div class="imgcard">
-          <img src="assets/studentshappy.jpg" alt="Students collaborating" />
-          <div class="caption">Students collaborating on career planning.</div>
-        </div>
-        <div class="imgcard">
-          <img src="assets/stressed-student.jpg.webp" alt="Student focusing on quiz" />
-          <div class="caption">A short, low-friction quiz — under 2 minutes.</div>
-        </div>
-        <div class="imgcard">
-          <img src="assets/univeristy%20placement%20meeting.png" alt="Team reviewing outcomes" />
-          <div class="caption">Outcomes universities can track and report.</div>
-        </div>
-      </div>
-
-      <h3>Metrics & Decisions</h3>
+      <h3>Metrics & Decision Rules</h3>
       <ul>
-        <li><strong>Primary:</strong> Quiz → Email conversion (demand).</li>
+        <li><strong>Primary:</strong> Quiz → Email conversion shows demand.</li>
         <li><strong>Secondary:</strong> thumbs-up rate (accuracy feel) and school interest (viability).</li>
-      </ul>
-
-      <h3>Decision Rules</h3>
-      <ul>
-        <li><strong>Positive:</strong> ≥ 25% conversion → build MVP-1 (market dashboard + recruiting tracker), run a small pilot with 1–2 departments.</li>
-        <li><strong>Negative:</strong> &lt; 12% or low thumbs-up → try a different hook (e.g., lead with Recruiting Tracker), refine copy/quiz, re-test.</li>
+        <li><strong>Positive:</strong> ≥ 25% conversion → build MVP-1 (dashboard + tracker), pilot with 1–2 departments.</li>
+        <li><strong>Negative:</strong> &lt; 12% conversion → test a different hook (e.g. Recruiting Tracker), refine quiz, and re-run.</li>
       </ul>
 
       <h3>Prototype</h3>
-      <p>
-        <a href="https://alamzaki.github.io/careerfit-prototype/" target="_blank">
-          <strong>👉 CareerFit Prototype — Landing + Quiz (Live)</strong>
-        </a>
-      </p>
+      <p><a href="https://alamzaki.github.io/careerfit-prototype/" target="_blank"><strong>👉 Try the Live Quiz Prototype</strong></a></p>
     </div>
 
     <div class="footer-note">© 2025 — Zaki Alam • Submission for With/Care Ventures (Product Experimentation Intern)</div>
