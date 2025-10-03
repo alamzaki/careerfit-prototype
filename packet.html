@@ -6,7 +6,7 @@
 <title>With/Care Ventures — Concept Map & Experiment Build — Zaki Alam</title>
 <meta name="description" content="Submission — Product Experimentation Intern — With/Care Ventures — Zaki Alam" />
 
-<!-- Font -->
+<!-- Professional, readable font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
@@ -25,75 +25,80 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.65}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
 
-  /* Top action bar */
+  /* Top bar */
   .topbar{
-    position:sticky; top:0; z-index:1000;
-    background:#fff; border-bottom:1px solid var(--line);
-    box-shadow:0 4px 12px rgba(2,6,23,.04);
-  }
-  .topbar-inner{
-    max-width:980px; margin:0 auto; padding:10px 16px;
-    display:flex; align-items:center; justify-content:flex-end; gap:10px;
+    position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);
+    display:flex;gap:10px;justify-content:flex-end;align-items:center;padding:10px 16px;
   }
   .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:10px 14px; border-radius:10px; border:1px solid var(--line);
-    background:#fff; color:var(--ink); text-decoration:none; font-weight:700; cursor:pointer;
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--line);background:#fff;color:var(--ink);
+    padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700;
+    box-shadow:0 2px 6px rgba(2,6,23,.05);
   }
-  .btn:hover{ background:#f8fafc }
-  .btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent) }
-  .btn-primary:hover{ filter:brightness(.96) }
+  .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn:hover{filter:brightness(.98)}
+  .btn:active{transform:translateY(1px)}
 
-  .wrap{max-width:980px;margin:0 auto;padding:24px 20px}
+  .wrap{max-width:980px;margin:0 auto;padding:18px 20px 28px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin:18px 0}
 
+  /* HERO */
   .hero{display:grid;grid-template-columns:2fr 1.2fr;gap:18px;align-items:center}
   @media (max-width:900px){ .hero{grid-template-columns:1fr} }
-
+  .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-weight:700}
   h1{font-size:28px;letter-spacing:.2px;margin:10px 0}
   h2{font-size:22px;margin:0 0 12px 0}
   h3{font-size:16px;margin:16px 0 8px 0}
   p{margin:8px 0}
-  ul{margin:8px 0 0 18px}
-  ol{margin:8px 0 0 18px}
-  li{margin:6px 0}
 
-  .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-weight:700}
-  .small{font-size:13px;color:var(--muted)}
   .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
   .chip{display:inline-block;background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;color:#0b1324}
 
   .hero-img{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
   .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
 
-  .subtle{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px}
+  /* Grids & image cards */
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   @media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
-  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-  @media (max-width:900px){ .grid-3{grid-template-columns:1fr} }
-
-  .table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid var(--line);margin-top:8px}
-  .table th,.table td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-  .table th{background:#f3f6fb;text-align:left;font-weight:800}
-  .table tr:last-child td{border-bottom:none}
-
-  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  @media (max-width:900px){ .kpi-row{grid-template-columns:1fr} }
-  .kpi{background:var(--accent-soft);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:12px}
-
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .footer-note{font-size:12px;color:#7182a6;text-align:center;margin:26px 0}
-
-  .imgcard{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .imgcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
   .imgcard img{display:block;width:100%;height:220px;object-fit:cover}
   .caption{padding:10px;font-size:13px;color:var(--muted)}
 
-  /* print */
+  /* “Inline” small image on the right */
+  .inline-aside{
+    display:grid;grid-template-columns:1fr 140px;gap:16px;align-items:start;
+  }
+  .inline-aside .aside-img{
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;
+  }
+  .inline-aside .aside-img img{width:100%;height:140px;object-fit:cover;display:block}
+  @media (max-width:720px){
+    .inline-aside{grid-template-columns:1fr}
+    .inline-aside .aside-img{order:-1}
+  }
+
+  /* Table */
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+  .table{width:100%;border-collapse:separate;border-spacing:0}
+  .table th,.table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .table th{background:#f3f6fb;text-align:left;font-weight:800;white-space:nowrap}
+  .table tr:last-child td{border-bottom:none}
+
+  /* KPI row */
+  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+  @media (max-width:900px){ .kpi-row{grid-template-columns:1fr} }
+  .kpi{background:var(--accent-soft);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:12px}
+
+  .footer-note{font-size:12px;color:#7182a6;text-align:center;margin:26px 0}
+
+  /* Print */
   @media print{
-    body{background:#fff}
     .topbar{display:none}
+    body{background:#fff}
     .card{box-shadow:none}
     a{color:#000;text-decoration:underline}
   }
@@ -101,12 +106,10 @@
 </head>
 <body>
 
-  <!-- Sticky Top Action Bar -->
+  <!-- TOP BAR -->
   <div class="topbar">
-    <div class="topbar-inner">
-      <a class="btn btn-primary" href="https://alamzaki.github.io/careerfit-prototype/" target="_blank" rel="noopener">▶ START QUIZ</a>
-      <button class="btn" onclick="window.print()">🖨️ SAVE AS PDF</button>
-    </div>
+    <a class="btn btn-primary" href="https://alamzaki.github.io/careerfit-prototype/" target="_blank">Start Quiz →</a>
+    <button class="btn" onclick="window.print()">Save as PDF</button>
   </div>
 
   <div class="wrap">
@@ -117,17 +120,14 @@
         <div>
           <div class="badge">Product Experimentation Intern — Submission</div>
           <h1>With/Care Ventures — Concept Map & Experiment Build</h1>
-          <p class="small">
-            <strong>Candidate:</strong> Zaki Alam • IIT Madras •
-            Email: <a href="mailto:alamzaki0804@gmail.com">alamzaki0804@gmail.com</a> • Phone: +91 8178710681
-          </p>
+          <p class="small"><strong>Candidate:</strong> Zaki Alam • IIT Madras • Email: <a href="mailto:alamzaki0804@gmail.com">alamzaki0804@gmail.com</a> • Phone: +91 8178710681</p>
           <div class="chips">
             <span class="chip">Hook: Career Fit Quiz</span>
             <span class="chip">Metric: Quiz → Email conversion</span>
             <span class="chip">Goal ≥ 25% (n ≥ 50)</span>
           </div>
           <p style="margin-top:12px">
-            <a href="https://alamzaki.github.io/careerfit-prototype/" target="_blank" rel="noopener"><strong>👉 Try the Live Quiz Prototype</strong></a>
+            <a href="https://alamzaki.github.io/careerfit-prototype/" target="_blank"><strong>👉 Try the Live Quiz Prototype</strong></a>
           </p>
         </div>
         <div class="hero-img">
@@ -141,11 +141,11 @@
       <h2>Executive Summary</h2>
       <div class="grid-2">
         <div>
-          <p><strong>The problem (students):</strong> many students feel stuck choosing a path. There’s too much generic advice and it’s hard to see real ROI.</p>
+          <p><strong>The problem (students):</strong> many students feel stuck picking a path. There’s too much generic advice and it’s hard to see real ROI.</p>
           <p><strong>The problem (universities):</strong> career teams must show outcomes, not just “skills taught,” and need clearer signals about where students fit.</p>
           <p><strong>My idea:</strong> a lightweight tool that gives students <em>3–5 market-aware career matches</em> in minutes, then nudges them into simple, concrete next steps.</p>
           <p><strong>How I’m testing it:</strong> lead with one hook — a short quiz. If students complete it and request their full report, that’s our demand signal.</p>
-          <div class="kpi-row" style="margin-top:10px">
+          <div class="kpi-row">
             <div class="kpi"><strong>Demand</strong><br/>Quiz → Email conversion (target ≥ 25%).</div>
             <div class="kpi"><strong>“Accuracy feel”</strong><br/>Thumbs-up rate on suggestions (target ≥ 60%).</div>
             <div class="kpi"><strong>School interest</strong><br/>Qualified “For Schools” leads (≥ 2 / 100 students).</div>
@@ -203,87 +203,81 @@
 
       <div class="subtle">
         <h3 style="margin-top:0">Riskiest Assumptions & Tests</h3>
-        <table class="table">
-          <tr>
-            <th>Dimension</th><th>Assumption</th><th>Test Surface</th><th>Primary Metric</th><th>Threshold</th>
-          </tr>
-          <tr>
-            <td><strong>Demand</strong></td>
-            <td>Students complete the quiz and want the full report.</td>
-            <td>Landing → 6-Q quiz → suggestions → email gate</td>
-            <td>Quiz → Email conversion</td>
-            <td>≥ 25% (n ≥ 50)</td>
-          </tr>
-          <tr>
-            <td><strong>Feasibility</strong></td>
-            <td>Suggestions feel accurate enough to trust.</td>
-            <td>Thumbs-up / Thumbs-down on results</td>
-            <td>Thumbs-up rate</td>
-            <td>≥ 60%</td>
-          </tr>
-          <tr>
-            <td><strong>Viability</strong></td>
-            <td>Universities show interest if students engage.</td>
-            <td>Simple “For Schools” interest form</td>
-            <td>Qualified leads</td>
-            <td>≥ 2 / 100 students</td>
-          </tr>
-        </table>
+        <div class="table-wrap">
+          <table class="table" role="table" aria-label="Riskiest Assumptions and Tests">
+            <thead>
+              <tr>
+                <th>Dimension</th><th>Assumption</th><th>Test Surface</th><th>Primary Metric</th><th>Threshold</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Demand</strong></td>
+                <td>Students complete the quiz and want the full report.</td>
+                <td>Landing → 6-Q quiz → suggestions → email gate</td>
+                <td>Quiz → Email conversion</td>
+                <td>≥ 25% (n ≥ 50)</td>
+              </tr>
+              <tr>
+                <td><strong>Feasibility</strong></td>
+                <td>Suggestions feel accurate enough to trust.</td>
+                <td>Thumbs-up / Thumbs-down on results</td>
+                <td>Thumbs-up rate</td>
+                <td>≥ 60%</td>
+              </tr>
+              <tr>
+                <td><strong>Viability</strong></td>
+                <td>Universities show interest if students engage.</td>
+                <td>Simple “For Schools” interest form</td>
+                <td>Qualified leads</td>
+                <td>≥ 2 / 100 students</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
     <!-- EXPERIMENT BUILD -->
     <div class="card">
-      <h2>Experiment Build</h2>
-      <p>I built the smallest possible surface to read demand quickly. If students find value, they’ll ask for more; if not, we learn and adjust fast.</p>
+      <div class="inline-aside">
+        <div>
+          <h2>Experiment Build</h2>
+          <p>I built the smallest possible surface to read demand quickly. If students find value, they’ll ask for more; if not, we learn and adjust fast.</p>
 
-      <h3>What’s in the Prototype</h3>
-      <ul>
-        <li><strong>Landing Page:</strong> one clear promise (“Find your career fit in under 2 minutes”) and a single CTA.</li>
-        <li><strong>Career Fit Quiz:</strong> 6 short questions about what matters, strengths, and work style.</li>
-        <li><strong>Instant Suggestions:</strong> 3 paths shown immediately; email unlock for the full report (salary, demand, next steps).</li>
-        <li><strong>Quick Feedback:</strong> thumbs-up/down on result “feel.”</li>
-      </ul>
+          <h3>What’s in the Prototype</h3>
+          <ul>
+            <li><strong>Landing Page:</strong> one clear promise (“Find your career fit in under 2 minutes”) and a single CTA.</li>
+            <li><strong>Career Fit Quiz:</strong> 6 short questions about what matters, strengths, and work style.</li>
+            <li><strong>Instant Suggestions:</strong> 3 paths shown immediately; email unlock for the full report (salary, demand, next steps).</li>
+            <li><strong>Quick Feedback:</strong> thumbs-up/down on result “feel.”</li>
+          </ul>
 
-      <div class="grid-3">
-        <div class="imgcard">
-          <img src="assets/studentshappy.jpg" alt="Students collaborating" />
-          <div class="caption">Students collaborating on career planning.</div>
+          <h3>Metrics & Decisions</h3>
+          <ul>
+            <li><strong>Primary:</strong> Quiz → Email conversion (demand).</li>
+            <li><strong>Secondary:</strong> thumbs-up rate (accuracy feel) and school interest (viability).</li>
+          </ul>
+
+          <h3>Decision Rules</h3>
+          <ul>
+            <li><strong>Positive:</strong> ≥ 25% conversion → build MVP-1 (market dashboard + recruiting tracker), run a small pilot with 1–2 departments.</li>
+            <li><strong>Negative:</strong> &lt; 12% or low thumbs-up → try a different hook (e.g., lead with Recruiting Tracker), refine copy/quiz, re-test.</li>
+          </ul>
+
+          <h3>Prototype</h3>
+          <p>
+            <a href="https://alamzaki.github.io/careerfit-prototype/" target="_blank">
+              <strong>👉 CareerFit Prototype — Landing + Quiz (Live)</strong>
+            </a>
+          </p>
         </div>
-        <div class="imgcard">
-          <img src="assets/stressed-student.jpg.webp" alt="Student focusing on quiz" />
-          <div class="caption">A short, low-friction quiz — under 2 minutes.</div>
-        </div>
-        <div class="imgcard">
-          <img src="assets/univeristy%20placement%20meeting.png" alt="Team reviewing outcomes" />
-          <div class="caption">Outcomes universities can track and report.</div>
+
+        <!-- Small handshake image on the side -->
+        <div class="aside-img" aria-hidden="true">
+          <img src="assets/HANDSHAKE.jpg" alt="Handshake — alignment on outcomes">
         </div>
       </div>
-
-      <!-- Handshake photo (from your assets folder) -->
-      <div class="imgcard" style="margin-top:14px">
-        <img src="assets/HANDSHAKE.jpg" alt="Handshake partnership" />
-        <div class="caption">Goal: students and universities aligned on outcomes.</div>
-      </div>
-
-      <h3>Metrics & Decisions</h3>
-      <ul>
-        <li><strong>Primary:</strong> Quiz → Email conversion (demand).</li>
-        <li><strong>Secondary:</strong> thumbs-up rate (accuracy feel) and school interest (viability).</li>
-      </ul>
-
-      <h3>Decision Rules</h3>
-      <ul>
-        <li><strong>Positive:</strong> ≥ 25% conversion → build MVP-1 (market dashboard + recruiting tracker), run a small pilot with 1–2 departments.</li>
-        <li><strong>Negative:</strong> &lt; 12% or low thumbs-up → try a different hook (e.g., lead with Recruiting Tracker), refine copy/quiz, re-test.</li>
-      </ul>
-
-      <h3>Prototype</h3>
-      <p>
-        <a href="https://alamzaki.github.io/careerfit-prototype/" target="_blank" rel="noopener">
-          <strong>👉 CareerFit Prototype — Landing + Quiz (Live)</strong>
-        </a>
-      </p>
     </div>
 
     <div class="footer-note">© 2025 — Zaki Alam • Submission for With/Care Ventures (Product Experimentation Intern)</div>
