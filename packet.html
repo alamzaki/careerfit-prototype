@@ -4,7 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>With/Care Ventures — Concept Map & Experiment Build — Zaki Alam</title>
-<meta name="description" content="Submission — Product Experimentation Intern — With/Care Ventures — Zaki Alam" />
+<meta name="description" content="A lightweight career-fit experiment: helping students find clarity in 2 minutes and giving universities measurable outcomes." />
+
+<!-- Social Share (Open Graph) -->
+<meta property="og:title" content="Career Fit Experiment — Zaki Alam">
+<meta property="og:description" content="Helping students find clarity in 2 minutes, and universities measurable outcomes.">
+<meta property="og:image" content="assets/banner.webp">
+<meta property="og:type" content="website">
 
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,20 +31,23 @@
     --radius:16px;
   }
   *{box-sizing:border-box}
-  body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.7}
+  body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.7;font-size:16px}
   .wrap{max-width:1100px;margin:0 auto;padding:28px 18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px;margin:28px 0}
   h1,h2,h3{margin:14px 0}
   h1{font-size:32px}
   h2{font-size:24px;color:var(--accent)}
   h3{font-size:18px;color:#111}
-  p{margin:10px 0;font-size:15px}
+  p{margin:10px 0}
   .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:700}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
 
-  /* Top Actions */
-  .actions-top{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  /* Sticky header */
+  .sticky-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+  .sticky-bar img{height:34px}
+  .sticky-bar .actions{display:flex;gap:10px}
+
   .btn{display:inline-block;background:#fff;border:1px solid var(--line);padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer}
   .btn:hover{filter:brightness(.98)}
   .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -48,6 +57,10 @@
   .candidate-box{float:right;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px 16px;font-size:13px;box-shadow:var(--shadow);margin:10px 0}
   .candidate-box table{border-collapse:collapse}
   .candidate-box td{padding:4px 8px;font-size:13px}
+
+  /* Banner */
+  .banner{border-radius:14px;overflow:hidden;margin:20px 0}
+  .banner img{width:100%;height:auto;display:block;border:1px solid var(--line)}
 
   /* Summary Pills */
   .summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:20px 0}
@@ -60,12 +73,8 @@
   .imggrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
   @media(max-width:900px){.imggrid{grid-template-columns:1fr}}
   .imgcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;text-align:center}
-  .imgcard img{width:100%;height:240px;object-fit:cover}
-  .caption{padding:10px;font-size:13px;color:var(--muted);background:#fafbfc}
-
-  /* Banner */
-  .banner{border-radius:14px;overflow:hidden;margin:20px 0}
-  .banner img{width:100%;height:280px;object-fit:cover;display:block;border:1px solid var(--line)}
+  .imgcard img{width:100%;height:220px;object-fit:cover;border-bottom:1px solid var(--line)}
+  .caption{padding:10px;font-size:13px;color:var(--muted);font-style:italic;background:#fafbfc}
 
   /* Table */
   .tablewrap{overflow:auto;border-radius:12px;border:1px solid var(--line);margin-top:20px}
@@ -89,14 +98,21 @@
 </style>
 </head>
 <body>
-<div class="wrap">
+
+<!-- Sticky Header -->
+<div class="sticky-bar">
+  <img src="assets/iitm-logo.png" alt="IIT Madras Logo">
+  <div class="actions">
+    <a class="btn btn-primary" href="https://alamzaki.github.io/careerfit-prototype/" target="_blank">🚀 Start Quiz</a>
+    <button class="btn btn-ghost" onclick="window.print()">🖨 Save as PDF</button>
+  </div>
+  <img src="assets/withcare-logo.png" alt="With/Care Ventures Logo">
+</div>
+
+<div class="wrap" style="margin-top:80px">
 
   <!-- Header -->
   <div class="card">
-    <div class="actions-top">
-      <a class="btn btn-primary" href="https://alamzaki.github.io/careerfit-prototype/" target="_blank">🚀 Start Quiz</a>
-      <button class="btn btn-ghost" onclick="window.print()">🖨 Save as PDF</button>
-    </div>
     <div class="candidate-box">
       <table>
         <tr><td><strong>Candidate</strong></td><td>Zaki Alam</td></tr>
@@ -107,8 +123,12 @@
     </div>
     <div class="badge">Product Experimentation Intern — Submission</div>
     <h1>With/Care Ventures — Concept Map & Experiment Build</h1>
-    <div class="banner"><img src="assets/banner.webp" alt="Career Fit Banner"></div>
-    <p>This page is a polished public experiment write-up that demonstrates the concept, rationale, thresholds, and decision framework behind testing a career-fit quiz as a student engagement tool.</p>
+    <p>This public experiment write-up demonstrates the concept, rationale, thresholds, and decision framework behind testing a career-fit quiz as a scalable engagement tool.</p>
+    
+    <!-- Banner Image -->
+    <div class="banner">
+      <img src="assets/banner.webp" alt="CareerFit Banner">
+    </div>
   </div>
 
   <!-- Executive Summary -->
@@ -122,11 +142,11 @@
     <div class="imggrid">
       <div class="imgcard">
         <img src="assets/stressed-student.jpg.webp" alt="Confused student">
-        <div class="caption">Students: overwhelmed by too many career choices and generic advice.</div>
+        <div class="caption">Students: overwhelmed by too many career choices.</div>
       </div>
       <div class="imgcard">
         <img src="assets/career-fairs%20counselling.avif" alt="Career office">
-        <div class="caption">Universities: pressured to prove actual career outcomes beyond skills taught.</div>
+        <div class="caption">Universities: pressured to prove actual career outcomes.</div>
       </div>
     </div>
   </div>
@@ -212,13 +232,12 @@
   <!-- Impact if Successful -->
   <div class="card">
     <h2>📌 Impact if Successful</h2>
-    <p>If this experiment works, the implications are big:</p>
-    <ul>
-      <li><strong>For Students:</strong> Less confusion, faster alignment with real career paths, and reduced wasted years.</li>
-      <li><strong>For Universities:</strong> New evidence-based metrics to showcase, helping with rankings, employer trust, and alumni satisfaction.</li>
-      <li><strong>For Employers:</strong> More job-ready candidates funneled toward high-demand skills.</li>
-    </ul>
-    <p>This small quiz could serve as the “front door” into a full-fledged ecosystem of career alignment, guidance, and outcomes tracking.</p>
+    <div class="highlight">
+      <p><strong>For Students:</strong> Less confusion, faster alignment with real paths, and reduced wasted years.</p>
+      <p><strong>For Universities:</strong> Evidence-based placement metrics → stronger rankings & recruiter trust.</p>
+      <p><strong>For Employers:</strong> Job-ready candidates funneled toward high-demand skills.</p>
+      <p>This small quiz could become the “front door” into a full ecosystem of career alignment, guidance, and outcomes tracking.</p>
+    </div>
   </div>
 
   <!-- Footer -->
