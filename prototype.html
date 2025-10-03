@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CareerFit Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Professional font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f8fc;
+      --card:#ffffff;
+      --ink:#0f172a;
+      --muted:#475569;
+      --line:#e6eaf0;
+      --accent:#2563eb;     /* blue */
+      --accent-2:#0ea5e9;   /* sky */
+      --good:#16a34a;
+      --warn:#f59e0b;
+      --radius:14px;
+      --shadow:0 10px 24px rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6}
+    img{max-width:100%;display:block}
+    .wrap{max-width:980px;margin:0 auto;padding:24px 16px}
+
+    /* HERO */
+    header{
+      position:relative;
+      color:#fff;
+      border-bottom:1px solid var(--line);
+      overflow:hidden;
+    }
+    .hero-bg{
+      background-image:url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2000&auto=format&fit=crop');
+      background-size:cover;background-position:center;
+      filter:brightness(.7);
+      position:absolute;inset:0;
+    }
+    .hero-inner{
+      position:relative;z-index:1;
+      max-width:1100px;margin:0 auto;padding:64px 16px;
+      display:grid;grid-template-columns:1.3fr .9fr;gap:18px;align-items:center;
+    }
+    @media (max-width:900px){ .hero-inner{grid-template-columns:1fr;padding:48px 16px} }
+    .hero-card{
+      background:rgba(15,23,42,.55);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:16px;padding:18px 18px 20px 18px;backdrop-filter:blur(6px);
+    }
+    .hero-card h1{margin:0 0 6px 0;font-size:30px}
+    .hero-card p{margin:6px 0 14px 0;color:#e5ecff}
+    .cta{display:inline-block;background:#fff;color:#0f172a;padding:12px 18px;border-radius:999px;font-weight:800;text-decoration:none;border:0;cursor:pointer}
+    .cta:hover{opacity:.95}
+
+    .hero-side{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);
+    }
+
+    /* CARDS / LAYOUT */
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin:20px 0}
+    .title{font-weight:800;margin:0 0 6px 0}
+    .muted{color:var(--muted);font-size:14px;margin:0}
+    .hidden{display:none}
+
+    /* QUIZ */
+    .progress{
+      height:10px;background:#eef2ff;border-radius:999px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px
+    }
+    .bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width .3s}
+    .q{margin:18px 0 20px 0}
+    .q h3{margin:0 0 8px 0;font-size:16px}
+    .options label{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;cursor:pointer;background:#f8fafc}
+    .options input{margin-right:8px}
+    .actions{display:flex;gap:10px;margin-top:10px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:pointer}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+    .error{color:#b91c1c;font-size:14px;margin-top:6px}
+
+    /* RESULTS */
+    .result-list{list-style:none;padding:0;margin:14px 0}
+    .result-item{display:flex;gap:12px;align-items:flex-start;background:#f1f5ff;border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0}
+    .icon{
+      width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+      background:#fff;border:1px solid var(--line);
+    }
+    .tag{display:inline-block;font-size:12px;background:#eaf5ff;color:#0b3d6b;border:1px solid #d7e9ff;border-radius:999px;padding:4px 8px;margin-left:6px}
+    .thumbs{display:flex;gap:8px;margin-top:10px}
+    .thumbs button{background:#f8fafc;border:1px solid var(--line);padding:8px 12px;border-radius:10px;cursor:pointer}
+    .thumbs button:hover{background:#eef2ff}
+
+    /* EMAIL GATE */
+    .gate{margin-top:14px}
+    .gate input{
+      padding:10px 12px;border-radius:10px;border:1px solid var(--line);width:70%;max-width:420px
+    }
+
+    /* FOOTER THANKS */
+    .thanks{ text-align:center }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header id="landing">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1>Find Your Career Fit in Under 2 Minutes</h1>
+        <p>Answer 6 quick questions. Get 3 career paths matched to your strengths and today’s market.</p>
+        <button class="cta" onclick="startQuiz()">Start Quiz →</button>
+      </div>
+      <div class="hero-side">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop" alt="Students working">
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- QUIZ CARD -->
+    <div class="card hidden" id="quiz">
+      <h2 class="title">Career Fit Quiz</h2>
+      <p class="muted" id="qnote">Question <span id="qnum">1</span> of 6</p>
+      <div class="progress"><div class="bar" id="bar"></div></div>
+      <form id="quizForm">
+
+        <div class="q" data-q="1">
+          <h3>1) When you think about your future career, what matters MOST right now?</h3>
+          <div class="options">
+            <label><input type="radio" name="q1" value="stability"> Stable, well-paying job quickly</label>
+            <label><input type="radio" name="q1" value="explore"> Exploring different paths before committing</label>
+            <label><input type="radio" name="q1" value="impact"> Doing meaningful/impactful work</label>
+            <label><input type="radio" name="q1" value="growth"> Long-term growth and leadership</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="2">
+          <h3>2) Which type of work feels most natural to you?</h3>
+          <div class="options">
+            <label><input type="radio" name="q2" value="analysis"> Analyzing and solving complex problems</label>
+            <label><input type="radio" name="q2" value="lead"> Leading projects and coordinating people</label>
+            <label><input type="radio" name="q2" value="design"> Designing and creating experiences/products</label>
+            <label><input type="radio" name="q2" value="research"> Researching and learning deeply</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="3">
+          <h3>3) What frustrates you the most about your current career planning?</h3>
+          <div class="options">
+            <label><input type="radio" name="q3" value="overwhelm"> Too many options, can’t decide</label>
+            <label><input type="radio" name="q3" value="generic"> Generic advice, not personal</label>
+            <label><input type="radio" name="q3" value="demand"> Unsure if my skills have real demand</label>
+            <label><input type="radio" name="q3" value="connect"> Can’t connect my interests to real jobs</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="4">
+          <h3>4) Which job environment do you see yourself thriving in?</h3>
+          <div class="options">
+            <label><input type="radio" name="q4" value="startup"> Fast-paced startup, many hats</label>
+            <label><input type="radio" name="q4" value="corp"> Structured corporate career path</label>
+            <label><input type="radio" name="q4" value="academia"> Research/academia</label>
+            <label><input type="radio" name="q4" value="freelance"> Freelance/flexible lifestyle</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="5">
+          <h3>5) Which strength do friends or mentors most often notice in you?</h3>
+          <div class="options">
+            <label><input type="radio" name="q5" value="tech"> Technical ability (coding, analysis)</label>
+            <label><input type="radio" name="q5" value="comm"> Communication & leadership</label>
+            <label><input type="radio" name="q5" value="crea"> Creativity & design thinking</label>
+            <label><input type="radio" name="q5" value="persist"> Persistence & problem-solving</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="6">
+          <h3>6) What’s your biggest worry about the future of work?</h3>
+          <div class="options">
+            <label><input type="radio" name="q6" value="ai"> Skills becoming irrelevant due to AI</label>
+            <label><input type="radio" name="q6" value="values"> Not finding a career matching my values</label>
+            <label><input type="radio" name="q6" value="roi"> Wasting time/money on degrees with poor ROI</label>
+            <label><input type="radio" name="q6" value="stuck"> Getting stuck in a path that doesn’t excite me</label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn" onclick="prev()">← Back</button>
+          <button type="button" class="btn btn-primary" onclick="next()">Next →</button>
+        </div>
+        <div class="error" id="err" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="card hidden" id="results">
+      <h2 class="title">Your Suggested Career Paths</h2>
+      <p class="muted">Based on your answers. These are quick pointers — the full report adds salary ranges, demand trends, and a simple action plan.</p>
+
+      <ul class="result-list">
+        <li class="result-item">
+          <div class="icon"><img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=300&auto=format&fit=crop" alt="Data"></div>
+          <div>
+            <strong>Data Scientist</strong> <span class="tag">High demand</span>
+            <div class="muted">Works at the intersection of coding, stats, and business questions. Great for analysis-first thinkers.</div>
+          </div>
+        </li>
+        <li class="result-item">
+          <div class="icon"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=300&auto=format&fit=crop" alt="PM"></div>
+          <div>
+            <strong>Product Manager</strong> <span class="tag">Fast growth</span>
+            <div class="muted">Owns the problem, aligns teams, ships outcomes. Ideal if you enjoy coordination + decision making.</div>
+          </div>
+        </li>
+        <li class="result-item">
+          <div class="icon"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=300&auto=format&fit=crop" alt="UX"></div>
+          <div>
+            <strong>UX Designer</strong> <span class="tag">User-focused</span>
+            <div class="muted">Turns messy problems into simple flows. Great match for creative, empathetic builders.</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="gate">
+        <p><strong>Want the full report?</strong> Enter your email to unlock it instantly.</p>
+        <input id="email" type="email" placeholder="you@university.edu" />
+        <button class="btn btn-primary" onclick="thankYou()">Get My Report</button>
+      </div>
+
+      <div class="thumbs">
+        <span class="muted">Do these feel right?</span>
+        <button onclick="ack()">👍</button>
+        <button onclick="ack()">👎</button>
+      </div>
+    </div>
+
+    <!-- THANK YOU -->
+    <div class="card hidden thanks" id="thankyou">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=900&auto=format&fit=crop" alt="Thanks" style="border-radius:12px;border:1px solid var(--line);margin:0 auto 12px;max-height:220px;object-fit:cover">
+      <h2 class="title">Thanks! Your report is being prepared 🎉</h2>
+      <p class="muted">This is a prototype for the With/Care Ventures assignment. In a real version, we’d email you the full dashboard and roadmap.</p>
+    </div>
+
+  </div>
+
+  <script>
+    const total = 6;
+    let current = 1;
+
+    function startQuiz(){
+      document.getElementById('landing').classList.add('hidden');
+      document.getElementById('quiz').classList.remove('hidden');
+      updateProgress();
+      showOnly(current);
+    }
+
+    function showOnly(idx){
+      document.querySelectorAll('#quiz .q').forEach(q => {
+        q.style.display = (+q.dataset.q === idx) ? 'block' : 'none';
+      });
+      document.getElementById('qnum').textContent = idx;
+      document.getElementById('err').textContent = '';
+    }
+
+    function updateProgress(){
+      const pct = (current-1) / total * 100;
+      document.getElementById('bar').style.width = pct + '%';
+    }
+
+    function answered(idx){
+      const name = 'q'+idx;
+      return !!document.querySelector('input[name="'+name+'"]:checked');
+    }
+
+    function next(){
+      if (!answered(current)){
+        document.getElementById('err').textContent = 'Please pick an option to continue.';
+        return;
+      }
+      if (current < total){
+        current++;
+        showOnly(current);
+        updateProgress();
+        if (current === total){
+          // last question view still shows Next; change button label
+          document.querySelector('.actions .btn-primary').textContent = 'See My Results →';
+        }
+      } else {
+        // all answered
+        showResults();
+      }
+    }
+
+    function prev(){
+      if (current > 1){
+        current--;
+        showOnly(current);
+        updateProgress();
+        document.querySelector('.actions .btn-primary').textContent = (current===total) ? 'See My Results →' : 'Next →';
+      }
+    }
+
+    function showResults(){
+      // Ensure last question is answered
+      if (!answered(total)){
+        document.getElementById('err').textContent = 'Please pick an option to continue.';
+        return;
+      }
+      document.getElementById('quiz').classList.add('hidden');
+      document.getElementById('results').classList.remove('hidden');
+      // Fill bar to 100% to signal completion
+      document.getElementById('bar').style.width = '100%';
+      document.getElementById('qnote').textContent = 'Quiz completed';
+    }
+
+    function ack(){ alert('Thanks for your feedback!'); }
+
+    function thankYou(){
+      const email = document.getElementById('email').value.trim();
+      if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+        alert('Please enter a valid email to continue.');
+        return;
+      }
+      document.getElementById('results').classList.add('hidden');
+      document.getElementById('thankyou').classList.remove('hidden');
+      // In a real MVP, we’d send the email and log the conversion here.
+    }
+  </script>
+</body>
+</html>
