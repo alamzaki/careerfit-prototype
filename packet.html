@@ -42,7 +42,7 @@
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
   .subtle{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px}
-  .img-card{overflow:hidden;border-radius:12px;border:1px solid var(--line)}
+  .img-card{overflow:hidden;border-radius:12px;border:1px solid var(--line);margin-bottom:10px}
   .img-card img{width:100%;height:220px;object-fit:cover;display:block}
   .table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid var(--line);margin-top:8px}
   .table th,.table td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -93,7 +93,11 @@
     <div class="card">
       <h2>Executive Summary</h2>
       <p><strong>The problem (student side):</strong> Many students feel stuck choosing a path. There’s too much generic advice and it’s hard to see real ROI.</p>
+      <div class="img-card"><img src="assets/stressed-student.jpg.webp" alt="Stressed student" /></div>
+
       <p><strong>The problem (university side):</strong> Career teams must show outcomes, not just “skills taught,” and need clearer signals about where students fit.</p>
+      <div class="img-card"><img src="assets/career-fairs counselling.avif" alt="Career counseling session" /></div>
+
       <p><strong>My idea:</strong> a lightweight tool that gives students 3–5 market-aware career matches in minutes, then nudges them into simple, concrete next steps.</p>
       <p><strong>How I’m testing it:</strong> lead with one hook — a short quiz. If students complete it and request their full report, that’s our demand signal.</p>
 
@@ -132,12 +136,7 @@
 
         <!-- Visuals column -->
         <div class="subtle">
-          <div class="img-card" title="Students researching careers">
-            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1400&auto=format&fit=crop" alt="Students researching" />
-          </div>
-          <div class="img-card" style="margin-top:10px" title="Clean desk with charts">
-            <img src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?q=80&w=1400&auto=format&fit=crop" alt="Charts and laptop" />
-          </div>
+          <div class="img-card"><img src="assets/university graduation success employment.jpg" alt="University graduation success and employment" /></div>
         </div>
       </div>
     </div>
@@ -187,8 +186,8 @@
       </ul>
 
       <div class="grid-2" style="margin-top:6px">
-        <div class="subtle img-card" title="Students collaborating">
-          <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?q=80&w=1400&auto=format&fit=crop" alt="Students collaborating" />
+        <div class="subtle img-card">
+          <img src="assets/career-fairs counselling.avif" alt="Students collaborating on career planning" />
         </div>
         <div class="subtle">
           <h3 style="margin-top:0">Metrics & Decisions</h3>
