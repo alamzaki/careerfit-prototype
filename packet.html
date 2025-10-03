@@ -23,7 +23,6 @@
     --warn:#f59e0b;
     --shadow:0 10px 30px rgba(2,6,23,.08);
     --radius:16px;
-    --chip:#f1f5f9;
   }
   *{box-sizing:border-box}
   body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.7}
@@ -37,7 +36,14 @@
   .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:700}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
-  
+
+  /* Top Actions */
+  .actions-top{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+  .btn{display:inline-block;background:#fff;border:1px solid var(--line);padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer}
+  .btn:hover{filter:brightness(.98)}
+  .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn-ghost{background:#fff}
+
   /* Candidate Info */
   .candidate-box{float:right;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px 16px;font-size:13px;box-shadow:var(--shadow);margin:10px 0}
   .candidate-box table{border-collapse:collapse}
@@ -54,7 +60,7 @@
   .imggrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
   @media(max-width:900px){.imggrid{grid-template-columns:1fr}}
   .imgcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;text-align:center}
-  .imgcard img{width:100%;height:220px;object-fit:cover}
+  .imgcard img{width:100%;height:240px;object-fit:cover}
   .caption{padding:10px;font-size:13px;color:var(--muted);background:#fafbfc}
 
   /* Table */
@@ -65,7 +71,6 @@
   tr:nth-child(even) td{background:#fcfdff}
   .metric{font-weight:800}
   .ok{color:var(--good);font-weight:800}
-  .warn{color:var(--warn);font-weight:800}
 
   /* Highlight box */
   .highlight{background:#eef2ff;border-left:4px solid var(--accent);padding:14px;border-radius:8px;margin:16px 0}
@@ -84,6 +89,10 @@
 
   <!-- Header -->
   <div class="card">
+    <div class="actions-top">
+      <a class="btn btn-primary" href="https://alamzaki.github.io/careerfit-prototype/" target="_blank">🚀 Start Quiz</a>
+      <button class="btn btn-ghost" onclick="window.print()">🖨 Save as PDF</button>
+    </div>
     <div class="candidate-box">
       <table>
         <tr><td><strong>Candidate</strong></td><td>Zaki Alam</td></tr>
@@ -94,25 +103,25 @@
     </div>
     <div class="badge">Product Experimentation Intern — Submission</div>
     <h1>With/Care Ventures — Concept Map & Experiment Build</h1>
-    <p>This public experiment page outlines the concept, rationale, design, and decision thresholds for validating a career-fit quiz as a scalable student engagement tool.</p>
+    <p>This page is a polished public experiment write-up that demonstrates the concept, rationale, thresholds, and decision framework behind testing a career-fit quiz as a student engagement tool.</p>
   </div>
 
   <!-- Executive Summary -->
   <div class="card">
     <h2>Executive Summary</h2>
     <div class="highlight">
-      <strong>Why it matters:</strong> Career confusion is one of the biggest hidden stressors for students, while universities face mounting pressure to demonstrate career outcomes. A lightweight career-fit tool reduces wasted effort, guides students into viable paths, and strengthens institutional credibility with parents, recruiters, and ranking bodies.
+      <strong>Why it matters:</strong> Career choice anxiety is a silent burden for students, while universities struggle to validate outcomes. This micro-intervention aims to provide clarity in <em>two minutes</em>, reduce wasted years, and strengthen institutional trust with parents, employers, and ranking agencies.
     </div>
-    <p>In simple terms, this is more than a quiz — it’s a test of whether a 2-minute micro-intervention can spark trust and sustained engagement at scale.</p>
+    <p>This is more than a quiz. It is a test of whether a simple interactive surface can spark measurable engagement and serve as a foundation for scalable, evidence-based career services.</p>
 
     <div class="imggrid">
       <div class="imgcard">
         <img src="assets/stressed-student.jpg.webp" alt="Confused student">
-        <div class="caption">Students: overwhelmed by too many choices.</div>
+        <div class="caption">Students: overwhelmed by too many career choices and generic advice.</div>
       </div>
       <div class="imgcard">
         <img src="assets/career-fairs%20counselling.avif" alt="Career office">
-        <div class="caption">Universities: under pressure to prove outcomes.</div>
+        <div class="caption">Universities: pressured to prove actual career outcomes beyond skills taught.</div>
       </div>
     </div>
   </div>
@@ -121,22 +130,22 @@
   <div class="card">
     <h2>Concept Map</h2>
     <h3>🎯 Target Users</h3>
-    <p><strong>Primary:</strong> Ambitious students (18–26) seeking clarity. <br>
-       <strong>Secondary:</strong> University career services needing measurable signals.</p>
+    <p><strong>Primary:</strong> Ambitious students (18–26) seeking clarity.<br>
+       <strong>Secondary:</strong> Career service offices that want scalable insights.</p>
 
     <h3>🎁 Value Proposition</h3>
     <ul>
-      <li><strong>For Students:</strong> 3–5 clear career paths + one small action they can take today.</li>
-      <li><strong>For Universities:</strong> measurable, transparent outcomes for placements & guidance.</li>
+      <li><strong>For Students:</strong> 3–5 tailored paths with one clear next step today.</li>
+      <li><strong>For Universities:</strong> measurable outcomes that strengthen credibility with recruiters and stakeholders.</li>
     </ul>
 
     <h3>🧭 Five Big Features</h3>
     <ol>
-      <li>Career Fit Quiz — 6 simple questions → instant matches</li>
-      <li>Market Demand Dashboard — salary, demand, growth</li>
-      <li>Recruiting Tracker — track applications & interviews</li>
-      <li>Peer Benchmarking — see what others like you explore</li>
-      <li>Action Roadmap — micro-skills & starter projects</li>
+      <li>Career Fit Quiz — lightweight hook</li>
+      <li>Market Demand Dashboard — data on demand & salary</li>
+      <li>Recruiting Tracker — manage applications in one place</li>
+      <li>Peer Benchmarking — social proof from similar students</li>
+      <li>Action Roadmap — suggested micro-skills & projects</li>
     </ol>
 
     <div class="tablewrap">
@@ -145,15 +154,15 @@
           <tr><th>Dimension</th><th>Assumption</th><th>Test Surface</th><th>Metric</th><th>Threshold</th></tr>
         </thead>
         <tbody>
-          <tr><td class="metric">Demand</td><td>Students complete quiz & request full report</td><td>Quiz → Email gate</td><td>Conversion %</td><td class="ok">≥ 25%</td></tr>
-          <tr><td class="metric">Feasibility</td><td>Suggestions feel accurate/trustworthy</td><td>Thumbs up/down</td><td>Approval rate</td><td class="ok">≥ 60%</td></tr>
-          <tr><td class="metric">Viability</td><td>Universities engage if students respond</td><td>Interest form</td><td>Qualified leads</td><td class="ok">≥ 2 / 100</td></tr>
+          <tr><td class="metric">Demand</td><td>Students will complete quiz & ask for full report</td><td>Quiz → Email gate</td><td>Conversion</td><td class="ok">≥ 25%</td></tr>
+          <tr><td class="metric">Feasibility</td><td>Suggestions feel credible enough to trust</td><td>Thumbs up/down</td><td>Approval rate</td><td class="ok">≥ 60%</td></tr>
+          <tr><td class="metric">Viability</td><td>Universities respond if students engage</td><td>Interest form</td><td>Qualified leads</td><td class="ok">≥ 2 / 100</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="highlight">
-      <strong>Threshold rationale:</strong> 25% conversion rules out “just curiosity,” 60% approval proves trust, and 2/100 university leads ensures long-term scalability even at low adoption.
+      <strong>Threshold rationale:</strong> 25% conversion rules out random curiosity, 60% approval signals trust, and 2/100 university leads shows institutional relevance even at low early adoption.
     </div>
   </div>
 
@@ -162,28 +171,28 @@
     <h2>Experiment Build</h2>
     <div class="build">
       <div>
-        <p><strong>Why this build matters:</strong> It’s the leanest way to test demand without heavy investment. Early success justifies scaling; failure provides clarity to pivot quickly.</p>
+        <p><strong>Why this build matters:</strong> It is the leanest way to validate demand quickly. If it works, it unlocks a scalable MVP. If not, we learn early and pivot without sunk cost.</p>
 
         <h3>Prototype Includes</h3>
         <ul>
-          <li>Landing page with single CTA promise</li>
+          <li>Landing page with one promise</li>
           <li>6-question quiz</li>
-          <li>Instant suggestions (3 career paths)</li>
-          <li>Email unlock for deeper report</li>
-          <li>Quick thumbs-up/down feedback</li>
+          <li>Instant suggestions (3 paths)</li>
+          <li>Email unlock for deeper insights</li>
+          <li>Feedback buttons</li>
         </ul>
 
         <h3>Metrics & Decisions</h3>
         <ul>
-          <li><strong>Primary:</strong> Conversion % (demand)</li>
-          <li><strong>Secondary:</strong> Accuracy feel & school interest</li>
+          <li><strong>Primary:</strong> Conversion (quiz → email)</li>
+          <li><strong>Secondary:</strong> Accuracy feel (thumbs) & school interest</li>
         </ul>
 
         <h3>Decision Rules</h3>
         <ul>
-          <li><strong>Positive:</strong> ≥25% conversion → Build MVP (dashboard + tracker)</li>
-          <li><strong>Neutral:</strong> 12–24% → Refine copy & quiz; retest</li>
-          <li><strong>Negative:</strong> &lt;12% → Pivot to alternate hook</li>
+          <li><strong>Positive:</strong> ≥25% → Build MVP with dashboard + tracker</li>
+          <li><strong>Neutral:</strong> 12–24% → Refine messaging & quiz</li>
+          <li><strong>Negative:</strong> &lt;12% → Pivot to new hook</li>
         </ul>
 
         <p style="margin-top:20px">
@@ -197,8 +206,8 @@
 
   <!-- Footer -->
   <div class="footer-note">
-    © 2025 — Zaki Alam • Submission for With/Care Ventures (Product Experimentation Intern) <br>
-    Want to collaborate? Reach out at <a href="mailto:alamzaki0804@gmail.com">alamzaki0804@gmail.com</a>
+    © 2025 — Zaki Alam • Submission for With/Care Ventures (Product Experimentation Intern)<br>
+    📩 Reach out: <a href="mailto:alamzaki0804@gmail.com">alamzaki0804@gmail.com</a>
   </div>
 </div>
 </body>
