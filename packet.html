@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>With/Care Ventures — Concept Map & Experiment Build — Zaki Alam</title>
+<meta name="description" content="Submission — Product Experimentation Intern — With/Care Ventures — Zaki Alam" />
+
+<!-- Professional, readable font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#f7f9fb;            /* page bg */
+    --card:#ffffff;          /* card bg */
+    --ink:#0f172a;           /* main text */
+    --muted:#475569;         /* secondary text */
+    --line:#e6eaf0;          /* borders */
+    --accent:#4f46e5;        /* indigo */
+    --accent-soft:#eef2ff;   /* indigo 50 */
+    --accent-2:#0ea5e9;      /* sky */
+    --shadow:0 10px 30px rgba(2,6,23,.08);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.65}
+  .wrap{max-width:980px;margin:0 auto;padding:28px 20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin:18px 0}
+  .hero{display:grid;grid-template-columns:2fr 1.2fr;gap:18px;align-items:center}
+  @media (max-width:900px){ .hero{grid-template-columns:1fr} }
+  h1{font-size:28px;letter-spacing:.2px;margin:10px 0}
+  h2{font-size:22px;margin:0 0 12px 0}
+  h3{font-size:16px;margin:16px 0 8px 0}
+  p{margin:8px 0}
+  ul{margin:8px 0 0 18px}
+  ol{margin:8px 0 0 18px}
+  li{margin:6px 0}
+  .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-weight:700}
+  .small{font-size:13px;color:var(--muted)}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .chip{display:inline-block;background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;color:#0b1324}
+  .hero-img{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .subtle{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px}
+  .grid-2{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+  @media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
+  .table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid var(--line);margin-top:8px}
+  .table th,.table td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .table th{background:#f3f6fb;text-align:left;font-weight:800}
+  .table tr:last-child td{border-bottom:none}
+  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:900px){ .kpi-row{grid-template-columns:1fr} }
+  .kpi{background:var(--accent-soft);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:12px}
+  .icon{width:22px;height:22px;vertical-align:-4px;margin-right:6px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .footer-note{font-size:12px;color:#7182a6;text-align:center;margin:26px 0}
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HEADER / HERO -->
+    <div class="card">
+      <div class="hero">
+        <div>
+          <div class="badge">Product Experimentation Intern — Submission</div>
+          <h1>With/Care Ventures — Concept Map & Experiment Build</h1>
+          <p class="small"><strong>Candidate:</strong> Zaki Alam • IIT Madras • Email: <a href="mailto:alamzaki0804@gmail.com">alamzaki0804@gmail.com</a></p>
+          <div class="chips">
+            <span class="chip">Hook: Career Fit Quiz</span>
+            <span class="chip">Metric: Quiz → Email conversion</span>
+            <span class="chip">Goal ≥ 25% (n ≥ 50)</span>
+          </div>
+          <p style="margin-top:12px"><a href="index.html">👉 Try the Live Quiz Prototype</a></p>
+        </div>
+        <div class="hero-img">
+          <img alt="CareerFit Prototype Banner" src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1600&auto=format&fit=crop" />
+        </div>
+      </div>
+    </div>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="card">
+      <h2>Executive Summary</h2>
+      <p><strong>The problem:</strong> many students feel lost in career planning. Too many options, generic advice, and unclear ROI make it hard to choose. Universities also struggle to prove that their programs lead to real jobs, not just skill certificates.</p>
+      <p><strong>The idea:</strong> a simple tool that gives students quick, realistic career matches based on their strengths and job market demand. For universities, it demonstrates outcomes and builds trust with students and parents.</p>
+      <p><strong>Test approach:</strong> launch one “hook” feature first — the Career Fit Quiz. If students complete the quiz and ask for the full report, that’s a clear signal of demand.</p>
+
+      <div class="kpi-row">
+        <div class="kpi"><strong>Demand</strong><br/>Quiz → Email conversion (target ≥ 25%).</div>
+        <div class="kpi"><strong>Accuracy Feel</strong><br/>Thumbs-up on suggestions (target ≥ 60%).</div>
+        <div class="kpi"><strong>School Viability</strong><br/>2+ pilot leads per 100 students.</div>
+      </div>
+    </div>
+
+    <!-- CONCEPT MAP -->
+    <div class="card">
+      <h2>Concept Map</h2>
+
+      <h3>User Personas</h3>
+      <p><strong>Primary:</strong> ambitious students (18–26) overwhelmed by options, advice, and uncertainty.</p>
+      <p><strong>Secondary:</strong> university career services teams needing to show measurable outcomes.</p>
+
+      <h3>Value Proposition</h3>
+      <ul>
+        <li><strong>For students:</strong> clear 3–5 career options aligned to strengths and demand, with next steps.</li>
+        <li><strong>For universities:</strong> a shift from “we teach skills” to “we guide careers.”</li>
+      </ul>
+
+      <h3>Feature Roadmap</h3>
+      <ol>
+        <li><strong>Career Fit Quiz (Hook):</strong> 6 questions → 3–5 options instantly.</li>
+        <li><strong>Market Dashboard:</strong> salary, demand, and growth outlook.</li>
+        <li><strong>Recruiting Tracker:</strong> track applications and interviews.</li>
+        <li><strong>Peer Benchmarking:</strong> “people like you also explored…”</li>
+        <li><strong>Action Roadmap:</strong> micro-skills and starter projects.</li>
+      </ol>
+
+      <div class="grid-2" style="margin-top:12px">
+        <div class="subtle">
+          <img alt="Laptop with charts" src="https://images.unsplash.com/photo-1508830524289-0adcbe822b40?q=80&w=1600&auto=format&fit=crop" />
+        </div>
+        <div class="subtle">
+          <h3>Riskiest Assumptions & Tests</h3>
+          <table class="table">
+            <tr>
+              <th>Dimension</th><th>Assumption</th><th>Test</th><th>Metric</th><th>Threshold</th>
+            </tr>
+            <tr>
+              <td><strong>Demand</strong></td>
+              <td>Students finish quiz + request report</td>
+              <td>Landing → Quiz → Email gate</td>
+              <td>Quiz → Email conversion</td>
+              <td>≥ 25%</td>
+            </tr>
+            <tr>
+              <td><strong>Feasibility</strong></td>
+              <td>Suggestions feel accurate enough</td>
+              <td>Thumbs-up/down</td>
+              <td>Thumbs-up rate</td>
+              <td>≥ 60%</td>
+            </tr>
+            <tr>
+              <td><strong>Viability</strong></td>
+              <td>Universities show interest</td>
+              <td>“For Schools” form</td>
+              <td>Pilot leads</td>
+              <td>≥ 2%</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIMENT BUILD -->
+    <div class="card">
+      <h2>Experiment Build</h2>
+      <p>I built the leanest version possible to measure demand. If students find the quiz useful, they’ll share their email to get more details. If not, they’ll drop off, and I’ll know the idea needs work.</p>
+
+      <h3>Surface Design</h3>
+      <ul>
+        <li><strong>Landing Page:</strong> simple headline, one CTA → Start Quiz.</li>
+        <li><strong>Career Fit Quiz:</strong> 6 questions on values, strengths, work style.</li>
+        <li><strong>Report Preview:</strong> 3 career paths → email unlock for full details.</li>
+        <li><strong>Feedback:</strong> thumbs-up/down for accuracy.</li>
+      </ul>
+
+      <h3>Metrics</h3>
+      <ul>
+        <li><strong>Primary:</strong> Quiz → Email conversion (demand).</li>
+        <li><strong>Secondary:</strong> thumbs-up rate (accuracy) and school form (viability).</li>
+      </ul>
+
+      <h3>Decision Rules</h3>
+      <ul>
+        <li><strong>Positive:</strong> ≥ 25% conversion → build MVP-1 (dashboard + tracker).</li>
+        <li><strong>Negative:</strong> &lt; 12% conversion → pivot hook or refine quiz.</li>
+      </ul>
+
+      <h3>Prototype Link</h3>
+      <p><a href="index.html"><strong>👉 Try the Live Quiz Prototype</strong></a></p>
+    </div>
+
+    <div class="footer-note">© 2025 — Zaki Alam • Submission for With/Care Ventures (Product Experimentation Intern)</div>
+  </div>
+</body>
+</html>
