@@ -5,20 +5,12 @@
   <title>CareerFit Prototype — Zaki Alam</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="CareerFit — a lean prototype to test student demand for quick, market-aware career matching. Built by Zaki Alam." />
-  <!-- Professional font (optional) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f6f8fc;
-      --card:#ffffff;
-      --ink:#0f172a;
-      --muted:#475569;
-      --line:#e6eaf0;
-      --accent:#2563eb;     /* blue */
-      --accent-2:#0ea5e9;   /* sky */
-      --radius:14px;
-      --shadow:0 10px 24px rgba(2,6,23,.08);
+      --bg:#f6f8fc; --card:#ffffff; --ink:#0f172a; --muted:#475569; --line:#e6eaf0;
+      --accent:#2563eb; --accent-2:#0ea5e9; --radius:14px; --shadow:0 10px 24px rgba(2,6,23,.08);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6}
@@ -27,69 +19,33 @@
     a:hover{text-decoration:underline}
     .wrap{max-width:980px;margin:0 auto;padding:24px 16px}
 
-    /* TOP NAV */
-    .topnav{
-      backdrop-filter: blur(8px);
-      position:sticky; top:0; z-index:10;
-      background:rgba(255,255,255,.85);
-      border-bottom:1px solid var(--line);
-    }
-    .topnav-inner{
-      max-width:1100px; margin:0 auto; padding:10px 16px;
-      display:flex; align-items:center; justify-content:space-between;
-    }
+    .topnav{backdrop-filter:blur(8px);position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);border-bottom:1px solid var(--line)}
+    .topnav-inner{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
     .brand{font-weight:800}
-    .navlinks{display:flex; gap:14px; align-items:center}
-    .navbtn{
-      display:inline-block; padding:8px 12px; border-radius:999px;
-      border:1px solid var(--line); background:#fff; color:#0f172a; font-weight:600;
-    }
-    .navbtn.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
+    .navlinks{display:flex;gap:14px;align-items:center}
+    .navbtn{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#0f172a;font-weight:600}
+    .navbtn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
     .navbtn:hover{opacity:.95}
 
-    /* HERO */
-    header{
-      position:relative; color:#fff;
-      border-bottom:1px solid var(--line); overflow:hidden;
-    }
-    .hero-bg{
-      background-image:url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2000&auto=format&fit=crop');
-      background-size:cover; background-position:center;
-      filter:brightness(.7); position:absolute; inset:0;
-    }
-    .hero-inner{
-      position:relative; z-index:1; max-width:1100px;
-      margin:0 auto; padding:64px 16px;
-      display:grid; grid-template-columns:1.3fr .9fr; gap:18px; align-items:center;
-    }
+    header{position:relative;color:#fff;border-bottom:1px solid var(--line);overflow:hidden}
+    .hero-bg{background-image:url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2000&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.7);position:absolute;inset:0}
+    .hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:64px 16px;display:grid;grid-template-columns:1.3fr .9fr;gap:18px;align-items:center}
     @media (max-width:900px){ .hero-inner{grid-template-columns:1fr;padding:48px 16px} }
-    .hero-card{
-      background:rgba(15,23,42,.55);
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:16px; padding:18px 18px 20px; backdrop-filter:blur(6px);
-    }
+    .hero-card{background:rgba(15,23,42,.55);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px 18px 20px;backdrop-filter:blur(6px)}
     .hero-card h1{margin:0 0 6px 0;font-size:30px}
     .hero-card p{margin:6px 0 14px 0;color:#e5ecff}
     .cta{display:inline-block;background:#fff;color:#0f172a;padding:12px 18px;border-radius:999px;font-weight:800;text-decoration:none;border:0;cursor:pointer}
     .cta:hover{opacity:.95}
+    .hero-side{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+    .hero-subnav{margin-top:10px;font-size:14px}
+    .hero-subnav a{color:#fff;text-decoration:underline}
 
-    .hero-side{
-      background:rgba(255,255,255,.9);
-      border:1px solid var(--line); border-radius:16px; padding:14px; box-shadow:var(--shadow);
-    }
-    .hero-subnav{margin-top:10px; font-size:14px}
-    .hero-subnav a{color:#fff; text-decoration:underline}
-
-    /* CARDS / LAYOUT */
     .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin:20px 0}
     .title{font-weight:800;margin:0 0 6px 0}
     .muted{color:var(--muted);font-size:14px;margin:0}
     .hidden{display:none}
 
-    /* QUIZ */
-    .progress{
-      height:10px;background:#eef2ff;border-radius:999px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px
-    }
+    .progress{height:10px;background:#eef2ff;border-radius:999px;overflow:hidden;border:1px solid var(--line);margin-bottom:16px}
     .bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width .3s}
     .q{margin:18px 0 20px 0}
     .q h3{margin:0 0 8px 0;font-size:16px}
@@ -102,26 +58,18 @@
     .btn:disabled{opacity:.5;cursor:not-allowed}
     .error{color:#b91c1c;font-size:14px;margin-top:6px}
 
-    /* RESULTS */
     .result-list{list-style:none;padding:0;margin:14px 0}
     .result-item{display:flex;gap:12px;align-items:flex-start;background:#f1f5ff;border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0}
-    .icon{
-      width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-      background:#fff;border:1px solid var(--line);
-    }
+    .icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line)}
     .tag{display:inline-block;font-size:12px;background:#eaf5ff;color:#0b3d6b;border:1px solid #d7e9ff;border-radius:999px;padding:4px 8px;margin-left:6px}
     .thumbs{display:flex;gap:8px;margin-top:10px}
     .thumbs button{background:#f8fafc;border:1px solid var(--line);padding:8px 12px;border-radius:10px;cursor:pointer}
     .thumbs button:hover{background:#eef2ff}
 
-    /* EMAIL GATE */
     .gate{margin-top:14px}
-    .gate input{
-      padding:10px 12px;border-radius:10px;border:1px solid var(--line);width:70%;max-width:420px
-    }
+    .gate input{padding:10px 12px;border-radius:10px;border:1px solid var(--line);width:70%;max-width:420px}
 
-    /* FOOTER */
-    footer{padding:18px 0 30px; text-align:center; font-size:14px; color:var(--muted)}
+    footer{padding:18px 0 30px;text-align:center;font-size:14px;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -133,8 +81,6 @@
       <div class="navlinks">
         <a class="navbtn" href="index.html">Home</a>
         <a class="navbtn" href="packet.html">Concept Map</a>
-        <!-- If you keep a separate prototype.html, link it here too -->
-        <!-- <a class="navbtn" href="prototype.html">Prototype</a> -->
         <a class="navbtn primary" href="#quiz" onclick="startQuiz()">Start Quiz</a>
       </div>
     </div>
@@ -146,19 +92,13 @@
     <div class="hero-inner">
       <div class="hero-card">
         <h1>Find Your Career Fit in Under 2 Minutes</h1>
-        <p>Answer 6 quick questions. Get 3 career paths matched to your strengths and today’s market.</p>
+        <p>Answer quick questions. Get career paths matched to your strengths and today’s market.</p>
         <button class="cta" onclick="startQuiz()">Start Quiz →</button>
-        <div class="hero-subnav">
-          Prefer reading first? <a href="packet.html">View the Concept Map</a>
-        </div>
+        <div class="hero-subnav">Prefer reading first? <a href="packet.html">View the Concept Map</a></div>
       </div>
       <div class="hero-side">
-        <img 
-          src="assets/university-graduation-success-employment.jpg" 
-          alt="University graduation success employment"
-          style="width:100%; height:280px; object-fit:cover; border-radius:12px;"
-          >
-
+        <img src="assets/university-graduation-success-employment.jpg" alt="University graduation success employment"
+             style="width:100%;height:280px;object-fit:cover;border-radius:12px;">
       </div>
     </div>
   </header>
@@ -168,67 +108,117 @@
     <!-- QUIZ CARD -->
     <div class="card hidden" id="quiz">
       <h2 class="title">Career Fit Quiz</h2>
-      <p class="muted" id="qnote">Question <span id="qnum">1</span> of 6</p>
+      <p class="muted" id="qnote">Question <span id="qnum">1</span> of 10</p>
       <div class="progress"><div class="bar" id="bar"></div></div>
       <form id="quizForm">
 
+        <!-- 1 -->
         <div class="q" data-q="1">
-          <h3>1) When you think about your future career, what matters MOST right now?</h3>
+          <h3>1) What excites you most about your future work?</h3>
           <div class="options">
-            <label><input type="radio" name="q1" value="stability"> Stable, well-paying job quickly</label>
-            <label><input type="radio" name="q1" value="explore"> Exploring different paths before committing</label>
-            <label><input type="radio" name="q1" value="impact"> Doing meaningful/impactful work</label>
-            <label><input type="radio" name="q1" value="growth"> Long-term growth and leadership</label>
+            <label><input type="radio" name="q1" value="build"> Building new products</label>
+            <label><input type="radio" name="q1" value="solve"> Solving complex problems</label>
+            <label><input type="radio" name="q1" value="help"> Helping people directly</label>
+            <label><input type="radio" name="q1" value="lead"> Leading and inspiring teams</label>
           </div>
         </div>
 
+        <!-- 2 -->
         <div class="q" data-q="2">
-          <h3>2) Which type of work feels most natural to you?</h3>
+          <h3>2) How do you prefer to work?</h3>
           <div class="options">
-            <label><input type="radio" name="q2" value="analysis"> Analyzing and solving complex problems</label>
-            <label><input type="radio" name="q2" value="lead"> Leading projects and coordinating people</label>
-            <label><input type="radio" name="q2" value="design"> Designing and creating experiences/products</label>
-            <label><input type="radio" name="q2" value="research"> Researching and learning deeply</label>
+            <label><input type="radio" name="q2" value="solo"> Solo, deep focus</label>
+            <label><input type="radio" name="q2" value="small"> Small, creative teams</label>
+            <label><input type="radio" name="q2" value="big"> Large, structured orgs</label>
+            <label><input type="radio" name="q2" value="free"> Flexible/freelance</label>
           </div>
         </div>
 
+        <!-- 3 -->
         <div class="q" data-q="3">
-          <h3>3) What frustrates you the most about your current career planning?</h3>
+          <h3>3) What motivates you most?</h3>
           <div class="options">
-            <label><input type="radio" name="q3" value="overwhelm"> Too many options, can’t decide</label>
-            <label><input type="radio" name="q3" value="generic"> Generic advice, not personal</label>
-            <label><input type="radio" name="q3" value="demand"> Unsure if my skills have real demand</label>
-            <label><input type="radio" name="q3" value="connect"> Can’t connect my interests to real jobs</label>
+            <label><input type="radio" name="q3" value="pay"> High pay & security</label>
+            <label><input type="radio" name="q3" value="creative"> Creative expression</label>
+            <label><input type="radio" name="q3" value="growth"> Growth & leadership</label>
+            <label><input type="radio" name="q3" value="impact"> Social impact</label>
           </div>
         </div>
 
+        <!-- 4 -->
         <div class="q" data-q="4">
-          <h3>4) Which job environment do you see yourself thriving in?</h3>
+          <h3>4) Biggest challenge right now?</h3>
           <div class="options">
-            <label><input type="radio" name="q4" value="startup"> Fast-paced startup, many hats</label>
-            <label><input type="radio" name="q4" value="corp"> Structured corporate career path</label>
-            <label><input type="radio" name="q4" value="academia"> Research/academia</label>
-            <label><input type="radio" name="q4" value="freelance"> Freelance/flexible lifestyle</label>
+            <label><input type="radio" name="q4" value="choices"> Too many choices</label>
+            <label><input type="radio" name="q4" value="demand"> Not sure if my skills are in demand</label>
+            <label><input type="radio" name="q4" value="start"> Don’t know where to start</label>
+            <label><input type="radio" name="q4" value="mentor"> Need guidance/mentorship</label>
           </div>
         </div>
 
+        <!-- 5 -->
         <div class="q" data-q="5">
-          <h3>5) Which strength do friends or mentors most often notice in you?</h3>
+          <h3>5) Which skill do you want to sharpen most?</h3>
           <div class="options">
-            <label><input type="radio" name="q5" value="tech"> Technical ability (coding, analysis)</label>
-            <label><input type="radio" name="q5" value="comm"> Communication & leadership</label>
-            <label><input type="radio" name="q5" value="crea"> Creativity & design thinking</label>
-            <label><input type="radio" name="q5" value="persist"> Persistence & problem-solving</label>
+            <label><input type="radio" name="q5" value="data"> Data & analysis</label>
+            <label><input type="radio" name="q5" value="design"> Design & creativity</label>
+            <label><input type="radio" name="q5" value="comms"> Communication & leadership</label>
+            <label><input type="radio" name="q5" value="ai"> Technical innovation (AI/coding)</label>
           </div>
         </div>
 
+        <!-- 6 -->
         <div class="q" data-q="6">
-          <h3>6) What’s your biggest worry about the future of work?</h3>
+          <h3>6) Pick a project you’d enjoy most:</h3>
           <div class="options">
-            <label><input type="radio" name="q6" value="ai"> Skills becoming irrelevant due to AI</label>
-            <label><input type="radio" name="q6" value="values"> Not finding a career matching my values</label>
-            <label><input type="radio" name="q6" value="roi"> Wasting time/money on degrees with poor ROI</label>
-            <label><input type="radio" name="q6" value="stuck"> Getting stuck in a path that doesn’t excite me</label>
+            <label><input type="radio" name="q6" value="bizdata"> Analyze data to solve a business problem</label>
+            <label><input type="radio" name="q6" value="app"> Design an app for students</label>
+            <label><input type="radio" name="q6" value="launch"> Lead a team to launch a new product</label>
+            <label><input type="radio" name="q6" value="research"> Research a new technology</label>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="q" data-q="7">
+          <h3>7) Which success story inspires you?</h3>
+          <div class="options">
+            <label><input type="radio" name="q7" value="founder"> Startup founder scaling a product</label>
+            <label><input type="radio" name="q7" value="scientist"> Scientist making a breakthrough</label>
+            <label><input type="radio" name="q7" value="designer"> Designer improving everyday life</label>
+            <label><input type="radio" name="q7" value="manager"> Manager uniting a team to deliver impact</label>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="q" data-q="8">
+          <h3>8) Where would you thrive?</h3>
+          <div class="options">
+            <label><input type="radio" name="q8" value="startup"> Fast-moving startup</label>
+            <label><input type="radio" name="q8" value="corp"> Big tech/corporate</label>
+            <label><input type="radio" name="q8" value="ngo"> Nonprofit/social org</label>
+            <label><input type="radio" name="q8" value="acad"> Research/academia</label>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="q" data-q="9">
+          <h3>9) How do you want to be known at work?</h3>
+          <div class="options">
+            <label><input type="radio" name="q9" value="solver"> Problem-solver</label>
+            <label><input type="radio" name="q9" value="builder"> Creative builder</label>
+            <label><input type="radio" name="q9" value="leader"> People leader</label>
+            <label><input type="radio" name="q9" value="innovator"> Innovator</label>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="q" data-q="10">
+          <h3>10) Biggest worry about career planning?</h3>
+          <div class="options">
+            <label><input type="radio" name="q10" value="wrong"> Making the wrong choice</label>
+            <label><input type="radio" name="q10" value="roi"> Low ROI on degrees</label>
+            <label><input type="radio" name="q10" value="boring"> Ending up in a boring job</label>
+            <label><input type="radio" name="q10" value="aiFear"> Falling behind new tech (AI)</label>
           </div>
         </div>
 
@@ -244,30 +234,7 @@
     <div class="card hidden" id="results">
       <h2 class="title">Your Suggested Career Paths</h2>
       <p class="muted">Based on your answers. These are quick pointers — the full report adds salary ranges, demand trends, and a simple action plan.</p>
-
-      <ul class="result-list">
-        <li class="result-item">
-          <div class="icon"><img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=300&auto=format&fit=crop" alt="Data"></div>
-          <div>
-            <strong>Data Scientist</strong> <span class="tag">High demand</span>
-            <div class="muted">Works at the intersection of coding, stats, and business questions. Great for analysis-first thinkers.</div>
-          </div>
-        </li>
-        <li class="result-item">
-          <div class="icon"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=300&auto=format&fit=crop" alt="PM"></div>
-          <div>
-            <strong>Product Manager</strong> <span class="tag">Fast growth</span>
-            <div class="muted">Owns the problem, aligns teams, ships outcomes. Ideal if you enjoy coordination + decision making.</div>
-          </div>
-        </li>
-        <li class="result-item">
-          <div class="icon"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=300&auto=format&fit=crop" alt="UX"></div>
-          <div>
-            <strong>UX Designer</strong> <span class="tag">User-focused</span>
-            <div class="muted">Turns messy problems into simple flows. Great match for creative, empathetic builders.</div>
-          </div>
-        </li>
-      </ul>
+      <ul class="result-list" id="resultList"></ul>
 
       <div class="gate">
         <p><strong>Want the full report?</strong> Enter your email to unlock it instantly.</p>
@@ -292,21 +259,17 @@
 
   </div>
 
-  <footer>
-    © 2025 — Zaki Alam • <a href="packet.html">Concept Map</a> • <a href="index.html">Home</a>
-  </footer>
+  <footer>© 2025 — Zaki Alam • <a href="packet.html">Concept Map</a> • <a href="index.html">Home</a></footer>
 
   <script>
-    const total = 6;
+    const total = 10;
     let current = 1;
 
     function startQuiz(){
       document.getElementById('landing').classList.add('hidden');
       document.getElementById('quiz').classList.remove('hidden');
-      updateProgress();
-      showOnly(current);
+      updateProgress(); showOnly(current);
     }
-
     function showOnly(idx){
       document.querySelectorAll('#quiz .q').forEach(q => {
         q.style.display = (+q.dataset.q === idx) ? 'block' : 'none';
@@ -314,49 +277,111 @@
       document.getElementById('qnum').textContent = idx;
       document.getElementById('err').textContent = '';
     }
-
     function updateProgress(){
       const pct = (current-1) / total * 100;
       document.getElementById('bar').style.width = pct + '%';
     }
-
     function answered(idx){
-      const name = 'q'+idx;
-      return !!document.querySelector('input[name="'+name+'"]:checked');
+      return !!document.querySelector(`input[name="q${idx}"]:checked`);
     }
-
     function next(){
       if (!answered(current)){
-        document.getElementById('err').textContent = 'Please pick an option to continue.';
-        return;
+        document.getElementById('err').textContent = 'Please pick an option to continue.'; return;
       }
       if (current < total){
-        current++;
-        showOnly(current);
-        updateProgress();
-        if (current === total){
-          document.querySelector('.actions .btn-primary').textContent = 'See My Results →';
-        }
-      } else {
-        showResults();
-      }
+        current++; showOnly(current); updateProgress();
+        if (current === total){ document.querySelector('.actions .btn-primary').textContent = 'See My Results →'; }
+      } else { showResults(); }
     }
-
     function prev(){
       if (current > 1){
-        current--;
-        showOnly(current);
-        updateProgress();
+        current--; showOnly(current); updateProgress();
         document.querySelector('.actions .btn-primary').textContent =
           (current===total) ? 'See My Results →' : 'Next →';
       }
     }
 
+    // ---------- Careers ----------
+    const CAREERS = [
+      { key:"data",      title:"Data Scientist",            badge:"High demand",
+        desc:"Analyze data to answer real business questions.", 
+        img:"https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=300&auto=format&fit=crop" },
+      { key:"pm",        title:"Product Manager",           badge:"Fast growth",
+        desc:"Own the problem, align teams, ship outcomes.", 
+        img:"https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=300&auto=format&fit=crop" },
+      { key:"ux",        title:"UX Designer",               badge:"User-focused",
+        desc:"Turn messy problems into simple, usable flows.", 
+        img:"https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=300&auto=format&fit=crop" },
+      { key:"founder",   title:"Entrepreneur / Founder",    badge:"High risk / reward",
+        desc:"Build from zero, find users, iterate fast.", 
+        img:"https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=300&auto=format&fit=crop" },
+      { key:"ml",        title:"AI / ML Engineer",          badge:"Cutting-edge",
+        desc:"Build intelligent systems and models.", 
+        img:"https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=300&auto=format&fit=crop" },
+      { key:"consult",   title:"Consultant / Strategy",     badge:"Client-facing",
+        desc:"Solve complex problems for diverse organizations.", 
+        img:"https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=300&auto=format&fit=crop" },
+      { key:"research",  title:"Research Scientist / PhD",  badge:"Deep focus",
+        desc:"Investigate new ideas and publish results.", 
+        img:"https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=300&auto=format&fit=crop" },
+      { key:"impact",    title:"Social Impact Leader / NGO",badge:"Mission-driven",
+        desc:"Design programs that improve lives at scale.", 
+        img:"https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=300&auto=format&fit=crop" },
+      { key:"marketing", title:"Marketing & Brand Strategist", badge:"Creative",
+        desc:"Craft stories, campaigns, and growth loops.", 
+        img:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=300&auto=format&fit=crop" },
+      { key:"indie",     title:"Freelance Creator / Indie Hacker", badge:"Flexible",
+        desc:"Work independently, build small products or services.", 
+        img:"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=300&auto=format&fit=crop" }
+    ];
+
+    // ---------- Weights (how answers map to careers) ----------
+    const W = {
+      q1:{ build:{founder:2,pm:1,ux:1}, solve:{data:2,ml:1,consult:1}, help:{impact:2,ux:1}, lead:{pm:2,consult:1} },
+      q2:{ solo:{research:1,indie:2}, small:{ux:1,founder:1,pm:1}, big:{pm:1,data:1,marketing:1}, free:{indie:2,ux:1} },
+      q3:{ pay:{data:1,ml:1,consult:1}, creative:{ux:2,marketing:1,indie:1}, growth:{pm:2,founder:1}, impact:{impact:2,ux:1} },
+      q4:{ choices:{pm:1,consult:1}, demand:{data:2,ml:1}, start:{ux:1,founder:1}, mentor:{pm:1,research:1} },
+      q5:{ data:{data:2,consult:1}, design:{ux:2,marketing:1}, comms:{pm:2,marketing:1}, ai:{ml:2,data:1} },
+      q6:{ bizdata:{data:2,consult:1}, app:{ux:2,founder:1}, launch:{pm:2,founder:1}, research:{research:2,ml:1} },
+      q7:{ founder:{founder:2,indie:1}, scientist:{research:2,ml:1}, designer:{ux:2,marketing:1}, manager:{pm:2,consult:1} },
+      q8:{ startup:{founder:2,pm:1}, corp:{pm:1,data:1,marketing:1}, ngo:{impact:2,ux:1}, acad:{research:2,ml:1} },
+      q9:{ solver:{data:1,consult:1}, builder:{ux:1,founder:1,indie:1}, leader:{pm:2}, innovator:{ml:1,founder:1} },
+      q10:{ wrong:{pm:1,consult:1}, roi:{data:1,ml:1}, boring:{ux:1,marketing:1}, aiFear:{ml:2,data:1} }
+    };
+
+    function scoreCareers(){
+      const scores = Object.fromEntries(CAREERS.map(c=>[c.key,0]));
+      for (let i=1;i<=total;i++){
+        const name = 'q'+i;
+        const choice = (document.querySelector(`input[name="${name}"]:checked`)||{}).value;
+        const adds = (W[name]||{})[choice] || {};
+        for (const k in adds) scores[k] += adds[k];
+      }
+      return Object.keys(scores).sort((a,b)=>scores[b]-scores[a]).map(k=>({key:k,score:scores[k]}));
+    }
+
+    function renderResults(){
+      const ranked = scoreCareers().slice(0,3);
+      const map = Object.fromEntries(CAREERS.map(c=>[c.key,c]));
+      const list = document.getElementById('resultList');
+      list.innerHTML = ranked.map(r=>{
+        const c = map[r.key];
+        return `
+          <li class="result-item">
+            <div class="icon"><img src="${c.img}" alt="${c.title}"></div>
+            <div>
+              <strong>${c.title}</strong> <span class="tag">${c.badge}</span>
+              <div class="muted">${c.desc}</div>
+            </div>
+          </li>`;
+      }).join('');
+    }
+
     function showResults(){
       if (!answered(total)){
-        document.getElementById('err').textContent = 'Please pick an option to continue.';
-        return;
+        document.getElementById('err').textContent = 'Please pick an option to continue.'; return;
       }
+      renderResults();
       document.getElementById('quiz').classList.add('hidden');
       document.getElementById('results').classList.remove('hidden');
       document.getElementById('bar').style.width = '100%';
@@ -364,22 +389,15 @@
     }
 
     function ack(){ alert('Thanks for your feedback!'); }
-
     function thankYou(){
       const email = document.getElementById('email').value.trim();
-      if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
-        alert('Please enter a valid email to continue.');
-        return;
-      }
+      if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ alert('Please enter a valid email to continue.'); return; }
       document.getElementById('results').classList.add('hidden');
       document.getElementById('thankyou').classList.remove('hidden');
-      // In a real MVP, you would send the email and log the conversion here.
     }
   </script>
 </body>
 </html>
-
-
 
 
 
