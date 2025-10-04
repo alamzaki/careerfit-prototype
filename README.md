@@ -19,10 +19,10 @@ The goal of this experiment is simple:
 ## 🛠 Why this approach  
 Instead of building a heavy product, I kept it **lightweight and fast**:  
 - The quiz is the **hook feature** — students get value in <2 minutes.  
-- The email gate is the **signal of demand** — if people submit, it shows they care.  
-- The feedback buttons act as a **signal of feasibility** — do students trust the results?  
+- The email gate is the signal of demand — if people submit, it shows they want it.  
+- The feedback buttons act as a signal of feasibility — do students trust the results?  
 
-This lets me validate or reject the riskiest assumption (**demand**) without weeks of coding.  
+This lets me validate or reject the riskiest assumption. 
 
 ---
 
