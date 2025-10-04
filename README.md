@@ -40,14 +40,6 @@ This lets me validate or reject the riskiest assumption.
 - **If negative:** Pivot the hook (e.g., lead with Recruiting Tracker) and re-test.  
 
 ---
-## 📂 File Structure & Explanation
-
-careerfit-prototype/
-│
-├── index.html # Main prototype: landing page, quiz flow, results, and email gate
-├── packet.html # Concept Map: explains persona, value proposition, features, metrics
-├── assets/ # Folder for images and logos (banner, student photos, university photos)
-└── README.md # Documentation for the repo
 
 ## 🔗 Live Demo   
 - [CareerFit Quiz Prototype](https://alamzaki.github.io/careerfit-prototype/)  
@@ -63,7 +55,9 @@ careerfit-prototype/
 ---
 By keeping it simple, I could test the idea quickly and see if students really want this kind of tool.  
 
-### 🔍 File Details
+---
+## 📂 File Explanation and Deatils 
+
 - **index.html**  
   The core interactive prototype. Contains:  
   - Landing page with CTA ("Find your career fit in under 2 minutes")  
