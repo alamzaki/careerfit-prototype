@@ -364,7 +364,13 @@
       const ranked = scoreCareers().slice(0,3);
       const map = Object.fromEntries(CAREERS.map(c=>[c.key,c]));
       const list = document.getElementById('resultList');
-      list.innerHTML = ranked.map(r=>{
+      const totalScore = ranked.reduce((s,r)=>s+r.score,0);
+      const confidence = totalScore > 0 ? Math.round((ranked[0].score/totalScore)*100) : 0;
+
+
+      list.innerHTML = `
+        <p class="muted">Top match confidence: <strong>${confidence}%</strong></p>
+      ` + ranked.map(r=>{
         const c = map[r.key];
         return `
           <li class="result-item">
@@ -392,12 +398,14 @@
     function thankYou(){
       const email = document.getElementById('email').value.trim();
       if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ alert('Please enter a valid email to continue.'); return; }
+      console.log("📩 Email captured:", email);
       document.getElementById('results').classList.add('hidden');
       document.getElementById('thankyou').classList.remove('hidden');
     }
   </script>
 </body>
 </html>
+
 
 
 
