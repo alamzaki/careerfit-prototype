@@ -1,6 +1,6 @@
 # CareerFit Prototype  - Zaki Alam
 
-This is a lean prototype I built as part of my **Product Experimentation Intern assignment for With/Care Ventures**.  
+This is a basic prototype I built as part of my **Product Experimentation Intern assignment for With/Care Ventures**.  
 
 The goal of this experiment is simple:  
 👉 *Can a short interactive quiz help students quickly find career paths that fit their strengths and today’s job market?*  
@@ -86,7 +86,7 @@ By keeping it simple, I could test the idea quickly and see if students really w
 ---
 
 ## 💼 Careers in the Prototype
-The prototype currently supports **10 career suggestions**, pulled from the `CAREERS` array in `index.html`:
+My prototype currently supports **10 career suggestions**, pulled from the `CAREERS` array in `index.html`:
 
 | Career | Badge | Description |
 |--------|-------|-------------|
@@ -100,33 +100,6 @@ The prototype currently supports **10 career suggestions**, pulled from the `CAR
 | **Social Impact Leader / NGO** | Mission-driven | Design programs that improve lives at scale. |
 | **Marketing & Brand Strategist** | Creative | Craft stories, campaigns, and growth loops. |
 | **Freelance Creator / Indie Hacker** | Flexible | Work independently, build small products or services. |
-
----
-
-
-## 💼 Careers in the Prototype
-The prototype currently supports **10 career suggestions**, pulled from the `CAREERS` array in `index.html`:
-
-1. **Data Scientist** 🧪 – High demand  
-   *Analyze data to answer real business questions.*  
-2. **Product Manager** 📊 – Fast growth  
-   *Own the problem, align teams, ship outcomes.*  
-3. **UX Designer** 🎨 – User-focused  
-   *Turn messy problems into simple, usable flows.*  
-4. **Entrepreneur / Founder** 🚀 – High risk / reward  
-   *Build from zero, find users, iterate fast.*  
-5. **AI / ML Engineer** 🤖 – Cutting-edge  
-   *Build intelligent systems and models.*  
-6. **Consultant / Strategy** 🧭 – Client-facing  
-   *Solve complex problems for diverse organizations.*  
-7. **Research Scientist / PhD** 🔬 – Deep focus  
-   *Investigate new ideas and publish results.*  
-8. **Social Impact Leader / NGO** 🌍 – Mission-driven  
-   *Design programs that improve lives at scale.*  
-9. **Marketing & Brand Strategist** 🎯 – Creative  
-   *Craft stories, campaigns, and growth loops.*  
-10. **Freelance Creator / Indie Hacker** 💻 – Flexible  
-    *Work independently, build small products or services.*  
 
 ---
 
