@@ -1,4 +1,4 @@
-# CareerFit Prototype  
+# CareerFit Prototype  - Zaki Alam
 
 This is a lean prototype I built as part of my **Product Experimentation Intern assignment for With/Care Ventures**.  
 
